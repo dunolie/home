@@ -1,0 +1,7 @@
+set ftp:ssl-allow true
+set ftp:ssl-force false
+set ftp:ssl-auth TLS
+set ftp:ssl-protect-data true
+set cmd:csh-history on
+set cmd:prompt "\[\e[0;33m\]lftp\] \[\e[0;37m\]\]\u\[\033[0;31m\]@\]\[\e[0;37m\]\]\h\] \[\e[0;35m\]\]\W\] \[\e[0;37m\](\] \[\e[00m\]\]"
+set cmd:default-title "lftp \h:\w"

@@ -1,0 +1,1886 @@
+## Lirc Keys Using Haupauge PVR      remote
+#
+
+# Apps
+##
+
+## ALSA
+# Start alsa keybinds
+#
+# Vol+ 3
+begin
+     remote = Haupauge
+     prog = irexec
+     button = VOL+
+     config = amixer set PCM 4%+ &
+     repeat = 2
+end
+# Vol- 3
+begin
+     remote = Haupauge
+     prog = irexec
+     button = VOL-
+     config = amixer set PCM 4%- &
+     repeat = 2
+end
+# Mute/UnMute Toggle
+begin
+     remote = Haupauge
+     prog = irexec
+     button = MUTE
+     config = amixer set Master toggle &
+     repeat = 0
+end
+##
+# Video - TV
+#
+
+# Start TV-Viewer
+begin
+     remote = Dell
+     prog = irexec
+     button = TV2
+     config = v4l2-ctl -i 1 && mplayer -ao alsa -vf pp=lb /dev/video0
+     repeat = 2
+end
+begin
+     remote = Dell
+     prog = irexec
+     button = TV
+     config = v4l2-ctl -i 1 && vlc --hdtv-fix --aspect-ratio=16:9 --monitor-par=4:3 --deinterlace-mode=x --disable-screensaver --control lirc /dev/video0
+     repeat = 2
+end
+# Start VLC
+begin
+     remote = Dell
+     prog = irexec
+     button = MCE
+     config = elisa &
+     repeat = 2
+end
+
+# Play/Pause Toggle Moc
+begin
+     remote = Apple
+     prog = irexec
+     button = PLAY
+     config = mocp -G
+     repeat = 0
+end
+# Stop Moc
+begin
+     remote = Apple
+     prog = irexec
+     button = MINUS
+     config = amixer set PCM 5%- &
+     repeat = 0
+end
+# Toggle Mute Moc
+begin
+     remote = Apple
+     prog = irexec
+     button = PLUS
+     config = amixer set PCM 5%+ &
+     repeat = 0
+end
+# Stop Moc
+# Next Song Moc
+begin
+     remote = Apple
+     prog = irexec
+     button = FWD
+     config = mocp -f
+     repeat = 0
+end
+# Prev Song Moc
+begin
+     remote = Apple
+     prog = irexec
+     button = REW
+     config = mocp -r
+     repeat = 0
+end
+# Exit Moc
+begin
+     remote = Apple
+     prog = irexec
+     button = MENU
+     config = mocp -x
+     repeat = 0
+end
+
+## Xine
+# Start xine keybinds
+#
+begin
+     remote = Haupauge
+     button = PLAY
+     prog   = xine
+     repeat = 0
+     config = Play
+end
+
+# playback pause toggle
+begin
+     remote = Haupauge
+     button = PAUSE
+     prog   = xine
+     repeat = 0
+     config = Pause
+end
+
+# stop playback
+begin
+     remote = Haupauge
+     button = STOP
+     prog   = xine
+     repeat = 0
+     config = Stop
+end
+
+# take a snapshot
+begin
+     remote = Haupauge
+     button = RED
+     prog   = xine
+     repeat = 0
+     config = Snapshot
+end
+
+# eject the current medium
+begin
+     remote = Haupauge
+     button = GREEN
+     prog   = xine
+     repeat = 0
+     config = Eject
+end
+
+# select and play next MRL in the playlist
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = NextMrl
+end
+
+# select and play previous MRL in the playlist
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = PriorMrl
+end
+
+# loop mode toggle
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = ToggleLoopMode
+end
+
+# stop playback after played stream
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = PlaylistStop
+end
+
+# scan playlist to grab stream infos
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = ScanPlaylistInfo
+end
+
+# add a mediamark from current playback
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = AddMediamark
+end
+
+# edit selected mediamark
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = MediamarkEditor
+end
+
+# set position to -60 seconds in current stream
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = SeekRelative-60
+end
+
+# set position to +60 seconds in current stream
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = SeekRelative+60
+end
+
+# set position to -30 seconds in current stream
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = SeekRelative-30
+end
+
+# set position to +30 seconds in current stream
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = SeekRelative+30
+end
+
+# set position to -15 seconds in current stream
+begin
+     remote = Haupauge
+     button = SKIPFOWARD
+     prog   = xine
+     repeat = 0
+     config = SeekRelative-15
+end
+
+# set position to +15 seconds in current stream
+begin
+     remote = Haupauge
+     button = REPLAY
+     prog   = xine
+     repeat = 0
+     config = SeekRelative+15
+end
+
+# set position to -7 seconds in current stream
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = SeekRelative-7
+end
+
+# set position to +7 seconds in current stream
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = SeekRelative+7
+end
+
+# set position to beginning of current stream
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = SetPosition0%
+end
+
+# set position to 10% of current stream
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = SetPosition10%
+end
+
+# set position to 20% of current stream
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = SetPosition20%
+end
+
+# set position to 30% of current stream
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = SetPosition30%
+end
+
+# set position to 40% of current stream
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = SetPosition40%
+end
+
+# set position to 50% of current stream
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = SetPosition50%
+end
+
+# set position to 60% of current stream
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = SetPosition60%
+end
+
+# set position to 70% of current stream
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = SetPosition70%
+end
+
+# set position to 80% of current stream
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = SetPosition80%
+end
+
+# set position to 90% of current stream
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = SetPosition90%
+end
+
+# increment playback speed
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = SpeedFaster
+end
+
+# decrement playback speed
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = SpeedSlower
+end
+
+# reset playback speed
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = SpeedReset
+end
+
+# increment audio volume
+begin
+     remote = Haupauge
+     button = VOL+
+     prog   = xine
+     repeat = 5
+     config = Volume+
+end
+
+# decrement audio volume
+begin
+     remote = Haupauge
+     button = VOL-
+     prog   = xine
+     repeat = 5
+     config = Volume-
+end
+
+# increment amplification level
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = Amp+
+end
+
+# decrement amplification level
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = Amp-
+end
+
+# reset amplification to default value
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = ResetAmp
+end
+
+# audio muting toggle
+begin
+     remote = Haupauge
+     button = MUTE
+     prog   = xine
+     repeat = 0
+     config = Mute
+end
+
+# select next audio channel
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = AudioChannelNext
+end
+
+# select previous audio channel
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = AudioChannelPrior
+end
+
+# visibility toggle of audio post effect window
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = APProcessShow
+end
+
+# toggle post effect usage
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = APProcessEnable
+end
+
+# select next sub picture (subtitle) channel
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = SpuNext
+end
+
+# select previous sub picture (subtitle) channel
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = SpuPrior
+end
+
+# interlaced mode toggle
+begin
+     remote = Haupauge
+     button = ASTERIX
+     prog   = xine
+     repeat = 0
+     config = ToggleInterleave
+end
+
+# cycle aspect ratio values
+begin
+     remote = Haupauge
+     button = #
+     prog   = xine
+     repeat = 0
+     config = ToggleAspectRatio
+end
+
+# reduce the output window size by factor 1.2
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = WindowReduce
+end
+
+# enlarge the output window size by factor 1.2
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = WindowEnlarge
+end
+
+# set video output window to 50%
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = Window50
+end
+
+# set video output window to 100%
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = Window100
+end
+
+# set video output window to 200%
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = Window200
+end
+
+# zoom in
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = ZoomIn
+end
+
+# zoom out
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = ZoomOut
+end
+
+# zoom in horizontally
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = ZoomInX
+end
+
+# zoom out horizontally
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = ZoomOutX
+end
+
+# zoom in vertically
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = ZoomInY
+end
+
+# zoom out vertically
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = ZoomOutY
+end
+
+# reset zooming
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = ZoomReset
+end
+
+# resize output window to stream size
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = Zoom1:1
+end
+
+# fullscreen toggle
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = ToggleFullscreen
+end
+
+# Xinerama fullscreen toggle
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = ToggleXineramaFullscr
+end
+
+# jump to media Menu
+begin
+     remote = Haupauge
+     button = MENU
+     prog   = xine
+     repeat = 0
+     config = Menu
+end
+
+# jump to Title Menu
+begin
+     remote = Haupauge
+     button = GUIDE
+     prog   = xine
+     repeat = 0
+     config = TitleMenu
+end
+
+# jump to Root Menu
+begin
+     remote = Haupauge
+     button = _BLANK
+     prog   = xine
+     repeat = 0
+     config = RootMenu
+end
+
+# jump to Subpicture Menu
+begin
+     remote = Haupauge
+     button = PICTURES
+     prog   = irexec
+     repeat = 0
+     config = 
+end
+
+# jump to Audio Menu
+begin
+     remote = Haupauge
+     button = MUSIC
+     prog   = xine
+     repeat = 0
+     config = AudioMenu
+end
+
+# jump to Angle Menu
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = AngleMenu
+end
+
+# jump to Part Menu
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = PartMenu
+end
+
+# menu navigate up
+begin
+     remote = Haupauge
+     button = UP
+     prog   = xine
+     repeat = 0
+     config = EventUp
+end
+
+# menu navigate down
+begin
+     remote = Haupauge
+     button = DOWN
+     prog   = xine
+     repeat = 0
+     config = EventDown
+end
+
+# menu navigate left
+begin
+     remote = Haupauge
+     button = LEFT
+     prog   = xine
+     repeat = 0
+     config = EventLeft
+end
+
+# menu navigate right
+begin
+     remote = Haupauge
+     button = RIGHT
+     prog   = xine
+     repeat = 0
+     config = EventRight
+end
+
+# menu select
+begin
+     remote = Haupauge
+     button = OK
+     prog   = xine
+     repeat = 0
+     config = EventSelect
+end
+
+# jump to next chapter
+begin
+     remote = Haupauge
+     button = FWD
+     prog   = xine
+     repeat = 0
+     config = EventNext
+end
+
+# jump to previous chapter
+begin
+     remote = Haupauge
+     button = REW
+     prog   = xine
+     repeat = 0
+     config = EventPrior
+end
+
+# select next angle
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = EventAngleNext
+end
+
+# select previous angle
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = EventAnglePrior
+end
+
+# visibility toggle of help window
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = HelpShow
+end
+
+# visibility toggle of video post effect window
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = VPProcessShow
+end
+
+# toggle post effect usage
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = VPProcessEnable
+end
+
+# visibility toggle of output window
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = ToggleWindowVisibility
+end
+
+# bordered window toggle of output window
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = ToggleWindowBorder
+end
+
+# visibility toggle of UI windows
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = ToggleVisibility
+end
+
+# visibility toggle of control window
+begin
+     remote = Haupauge
+     button = GO
+     prog   = xine
+     repeat = 0
+     config = ControlShow
+end
+
+# visibility toggle of mrl browser window
+begin
+     remote = Haupauge
+     button = YELLOW
+     prog   = xine
+     repeat = 0
+     config = MrlBrowser
+end
+
+# visibility toggle of playlist editor window
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = PlaylistEditor
+end
+
+# visibility toggle of the setup window
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = SetupShow
+end
+
+# visibility toggle of the event sender window
+begin
+     remote = Haupauge
+     button = TV
+     prog   = irexec
+     repeat = 0
+     config = v4l2-ctl -i 1 && vlc --width=1280 --height=720 --no-video-deco --hdtv-fix --aspect-ratio=16:9 --monitor-par=4:3 --deinterlace-mode=x --disable-screensaver --control lirc /dev/video0
+     repeat = 2
+end
+
+# visibility toggle of analog TV window
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = TVAnalogShow
+end
+
+# visibility toggle of log viewer
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = ViewlogShow
+end
+
+# visibility toggle of stream info window
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = StreamInfosShow
+end
+
+# display stream information using OSD
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = OSDStreamInfos
+end
+
+# display information using OSD
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = OSDWriteText
+end
+
+# show OSD menu
+begin
+     remote = Haupauge
+     button = BLUE
+     prog   = xine
+     repeat = 0
+     config = OSDMenu
+end
+
+# enter key binding editor
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = KeyBindingEditor
+end
+
+# open file selector
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = FileSelector
+end
+
+# select a subtitle file
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = SubSelector
+end
+
+# download a skin from the skin server
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = SkinDownload
+end
+
+# display MRL/Ident toggle
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = MrlIdentToggle
+end
+
+# grab pointer toggle
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = GrabPointer
+end
+
+# enter the number 0
+begin
+     remote = Haupauge
+     button = 0
+     prog   = xine
+     repeat = 0
+     config = Number0
+end
+
+# enter the number 1
+begin
+     remote = Haupauge
+     button = 1
+     prog   = xine
+     repeat = 0
+     config = Number1
+end
+
+# enter the number 2
+begin
+     remote = Haupauge
+     button = 2
+     prog   = xine
+     repeat = 0
+     config = Number2
+end
+
+# enter the number 3
+begin
+     remote = Haupauge
+     button = 3
+     prog   = xine
+     repeat = 0
+     config = Number3
+end
+
+# enter the number 4
+begin
+     remote = Haupauge
+     button = 4
+     prog   = xine
+     repeat = 0
+     config = Number4
+end
+
+# enter the number 5
+begin
+     remote = Haupauge
+     button = 5
+     prog   = xine
+     repeat = 0
+     config = Number5
+end
+
+# enter the number 6
+begin
+     remote = Haupauge
+     button = 6
+     prog   = xine
+     repeat = 0
+     config = Number6
+end
+
+# enter the number 7
+begin
+     remote = Haupauge
+     button = 7
+     prog   = xine
+     repeat = 0
+     config = Number7
+end
+
+# enter the number 8
+begin
+     remote = Haupauge
+     button = 8
+     prog   = xine
+     repeat = 0
+     config = Number8
+end
+
+# enter the number 9
+begin
+     remote = Haupauge
+     button = 9
+     prog   = xine
+     repeat = 0
+     config = Number9
+end
+
+# add 10 to the next entered number
+begin
+     remote = Haupauge
+     button = 0
+     prog   = xine
+     repeat = 0
+     config = Number10add
+end
+
+# set position in current stream to numeric percentage
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = SetPosition%
+end
+
+# set position forward by numeric argument in current stream
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = SeekRelative+
+end
+
+# set position back by numeric argument in current stream
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = SeekRelative-
+end
+
+# change audio video syncing (delay video)
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = AudioVideoDecay+
+end
+
+# change audio video syncing (delay audio)
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = AudioVideoDecay-
+end
+
+# reset audio video syncing offset
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = AudioVideoDecayReset
+end
+
+# change subtitle syncing (delay video)
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = SpuVideoDecay+
+end
+
+# change subtitle syncing (delay subtitles)
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = SpuVideoDecay-
+end
+
+# reset subtitle syncing offset
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = SpuVideoDecayReset
+end
+
+# toggle TV modes (on the DXR3)
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = ToggleTVmode
+end
+
+# switch Monitor to DPMS standby mode
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = DPMSStandby
+end
+
+# increase hue by 10
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = HueControl+
+end
+
+# decrease hue by 10
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = HueControl-
+end
+
+# increase saturation by 10
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = SaturationControl+
+end
+
+# decrease saturation by 10
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = SaturationControl-
+end
+
+# increase brightness by 10
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = BrightnessControl+
+end
+
+# decrease brightness by 10
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = BrightnessControl-
+end
+
+# increase contrast by 10
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = ContrastControl+
+end
+
+# decrease contrast by 10
+begin
+     remote = Haupauge
+     button = xxxxx
+     prog   = xine
+     repeat = 0
+     config = ContrastControl-
+end
+
+# quit the      program
+begin
+     remote = Haupauge
+     button = BACKEXIT
+     prog   = xine
+     repeat = 0
+     config = Quit
+end
+
+##
+# End of xine keybinds.
+##
+
+## VLC
+# Start vlc keybinds
+#
+# Play
+begin
+     remote = Dell
+     prog = irexec
+     prog = vlc
+     button = PLAY
+     config = key-play
+end
+# Pause
+begin
+     remote = Dell
+     prog = irexec
+     prog = vlc
+     button = PAUSE
+     config = key-pause
+end
+# Stop
+begin
+     remote = Dell
+     prog = irexec
+     prog = vlc
+     button = STOP
+     config = key-stop
+end
+# Fast Foward
+begin
+     remote = Dell
+     prog = irexec
+     prog = vlc
+     button = FWD
+     config = key-faster
+end
+# Reverse
+begin
+     remote = Dell
+     prog = irexec
+     prog = vlc
+     button = REW
+     config = key-slower
+end
+# Previous 
+begin
+     remote = Dell
+     prog = irexec
+     prog = vlc
+     button = REPLAY
+     config = key-prev
+end
+# Next
+begin
+     remote = Dell
+     prog = irexec
+     prog = vlc
+     button = SKIPFOWARD
+     config = key-next
+end
+# Up
+begin
+     remote = Dell
+     prog = irexec
+     prog = vlc
+     button = UP
+     config = key-nav-up
+end
+# Down
+begin
+     remote = Dell
+     prog = irexec
+     prog = vlc
+     button = Down
+     config = key-nav-down
+end
+# Left
+begin
+     remote = Dell
+     prog = irexec
+     prog = vlc
+     button = LEFT
+     config = key-nav-left
+end
+# Right
+begin
+     remote = Dell
+     prog = irexec
+     prog = vlc
+     button = RIGHT
+     config = key-nav-right
+end
+# Activate
+begin
+     remote = Dell
+     prog = irexec
+     prog = vlc
+     button = OK
+     config = key-nav-activate
+end
+# Vol Up
+begin
+     remote = Dell
+     prog = irexec
+     prog = vlc
+     button = VOL+
+     config = key-vol-up
+     repeat = 5
+end
+# Vol Down
+begin
+     remote = Dell
+     prog = irexec
+     prog = vlc
+     button = VOL-
+     config = key-vol-down
+     repeat = 5
+end
+# Mute
+begin
+     remote = Dell
+     prog = irexec
+     prog = vlc
+     button = MUTE
+     config = key-vol-mute
+end
+# Show Interface
+begin
+     remote = Dell
+     prog = irexec
+     prog = vlc
+     button = MENU
+     config = key-disc-menu
+end
+# hide Interface
+begin
+     remote = Dell
+     prog = irexec
+     prog = vlc
+     button = 
+     config = key-intf-hide
+end
+# xscreensaver
+begin
+     remote = Dell
+     prog = irexec
+     button = ASTERIX
+     config = 
+end
+# Snapshot
+begin
+     remote = Haupauge
+     prog = irexec
+     prog = vlc
+     button = _BLANK
+     config = key-snapshot
+end
+# Dienterlace
+begin
+     remote = Haupauge
+     prog = vlc
+     button = GREEN
+     config = key-deinterlace
+end
+# Aspect Ratio
+begin
+     remote = Haupauge
+     prog = vlc
+     button = YELLOW
+     config = key-aspect-ratio
+end
+# Fullscreen
+begin
+     remote = Haupauge
+     prog = vlc
+     button = BLUE
+     config = key-fullscreen
+end
+# Record
+begin
+     remote = Dell
+     prog = vlc
+     button = REC
+     config = key-record
+end
+# Quit
+begin
+     remote = Dell
+     prog = vlc
+     button = BACKEXIT
+     config = key-quit
+end
+
+##
+# End of vlc keybinds.
+##
+
+## MPlayer
+# Start mplayer keybinds
+#
+# Fullscreen - im using previous channel for fullscreen
+begin
+     remote = Dell
+     prog = irexec
+     prog = mplayer
+     button = PREVCHAN
+     config = vo_fullscreen
+end
+# Mute
+begin
+     remote = Dell
+     prog = irexec
+     prog = mplayer
+     button = MUTE
+     config = mute
+end
+# Pause
+begin
+     remote = Dell
+     prog = irexec
+     prog = mplayer
+     button = PAUSE
+     config = pause
+end
+# Play
+begin
+     remote = Dell
+     prog = irexec
+     prog = mplayer
+     button = PLAY
+     config = seek +0
+end
+# Stop
+begin
+     remote = Dell
+     prog = irexec
+     prog = mplayer
+     button = STOP
+     config = quit
+end
+# Quit
+begin
+     remote = Dell
+     prog = irexec
+     prog = mplayer
+     button = BACKEXIT
+     config = get_time_pos
+#     config = get_property stream_pos
+end
+# Exit
+begin
+     remote = Dell
+     prog = irexec
+     prog = mplayer
+     button = BACKEXIT
+     config = quit
+end
+# Power
+begin
+     remote = Dell
+     prog = irexec
+     prog = mplayer
+     button = POWER
+     config = quit
+end
+# Next
+begin
+     remote = Dell
+     prog = irexec
+     prog = mplayer
+     button = SKIPFOWARD
+     config = seek_chapter +1 0
+end
+# Replay
+begin
+     remote = Dell
+     prog = irexec
+     prog = mplayer
+     button = REPLAY
+     config = seek_chapter -1 0
+end
+# On Screen Display
+begin
+     remote = Haupauge
+     prog = irexec
+     prog = mplayer
+     button = BLUE
+     config = osd 3
+     config = osd 1
+end
+# Aspect Ratio
+begin
+     remote = Haupauge
+     prog = irexec
+     prog = mplayer
+     button = YELLOW
+     config = switch_ratio 1.77778
+     config = switch_ratio 1.33
+end
+# Subtitle
+begin
+     remote = Haupauge
+     prog = irexec
+     prog = mplayer
+     button = GREEN
+     config = vobsub_lang 1
+     config = vobsub_lang
+end
+# Fast Foward
+begin
+     remote = Dell
+     prog = irexec
+     prog = mplayer
+     button = FWD
+     config = seek +30
+end
+begin
+     prog = Dell
+     prog = irexec
+     button = REW
+     config = seek -10
+end
+# Rewind
+begin
+     remote = Dell
+     prog = irexec
+     prog = mplayer
+     button = REW
+     config = seek +30
+end
+# Left
+begin
+     remote = Dell
+     prog = irexec
+     prog = mplayer
+     button = LEFT
+     config = seek -10
+end
+# Vol Up
+begin
+     remote = Dell
+     prog = irexec
+     prog = mplayer
+     button = VOL+
+     config = volume 5
+end
+# Vol Down
+begin
+     remote = Dell
+     prog = irexec
+     prog = mplayer
+     button = VOL-
+     config = volume -5
+end
+# Channel Up
+begin
+     remote = Dell
+     prog = irexec
+     button = CHAN+
+     prog = mplayer
+     config = pt_step 1
+end
+# Channel Down
+begin
+     remote = Dell
+     prog = irexec
+     button = CHAN-
+     prog = mplayer
+     config = pt_step -1
+end
+
+# On Screen Display Property
+begin
+     remote = Haupauge
+     prog = irexec
+     prog = mplayer
+     button = #
+     config = osd_show_property_text "${filename}" 2400
+     config = osd_show_text ""
+end
+
+##
+# End of mplayer keybinds.
+##
+
+# Testing Below
+##
+
+## Amarok2
+# Start amarok keybinds
+begin
+     button = PLAY
+     prog   = irexec
+     repeat = 0
+     config = qdbus org.mpris.amarok /Player Play
+end
+
+begin
+     button = PAUSE
+     prog   = irexec
+     repeat = 0
+     config = qdbus org.mpris.amarok /Player Pause
+end
+
+begin
+     button = STOP
+     prog   = irexec
+     repeat = 0
+     config = qdbus org.mpris.amarok /Player Stop
+end
+
+begin
+     button = SKIPFOWARD
+     prog   = irexec
+     repeat = 0
+     config = qdbus org.mpris.amarok /Player Next
+end
+
+begin
+     button = REPLAY
+     prog   = irexec
+     repeat = 0
+     config = qdbus org.mpris.amarok /Player Prev
+end
+
+# Elisa Media Center
+# Start elisa keybinds
+begin
+     remote = Dell
+     prog = elisa
+     button = PLAY
+     config = toggle_play_pause_key
+     repeat = 0
+     delay = 0
+end
+
+begin
+     remote = Dell
+     prog = elisa
+     button = RIGHT
+     config = move_right_key
+     repeat = 0
+     delay = 0
+end
+
+begin
+     remote = Dell
+     prog = elisa
+     button = OK
+     config = activate_key
+     repeat = 0
+     delay = 0
+end
+
+begin
+     remote = Dell
+     prog = elisa
+     button = POWER
+     config = close_key
+     repeat = 0
+     delay = 0
+end
+
+begin
+     remote = Dell
+     prog = elisa
+     button = MUTE
+     config = toggle_mute_key
+     repeat = 0
+     delay = 0
+end
+
+begin
+     remote = Dell
+     prog = elisa
+     button = VOL-
+     config = decrement_volume_key
+     repeat = 0
+     delay = 0
+end
+
+begin
+      remote = Dell
+     prog = elisa
+     button = REW
+     config = seek_backward_key
+     repeat = 0
+     delay = 0
+end
+
+begin
+     remote = Dell
+     prog = elisa
+     button = STOP
+     config = stop_key
+     repeat = 0
+     delay = 0
+end
+
+begin
+     remote = Dell
+     prog = elisa
+     button = UP
+     config = move_up_key
+     repeat = 0
+     delay = 0
+end
+
+begin
+     remote = Dell
+     prog = elisa
+     button = VOL+
+     config = increment_volume_key
+     repeat = 0
+     delay = 0
+end
+
+begin
+     remote = Dell
+     prog = elisa
+     button = DOWN
+     config = move_down_key
+     repeat = 0
+     delay = 0
+end
+
+begin
+     remote = Dell
+     prog = elisa
+     button = PAUSE
+     config = pause_key
+     repeat = 0
+     delay = 0
+end
+
+begin
+     remote = Dell
+     prog = elisa
+     button = ENTER
+     config = activate_key
+     repeat = 0
+     delay = 0
+end
+
+begin
+     remote = Dell
+     prog = elisa
+     button = FWD
+     config = seek_forward_key
+     repeat = 0
+     delay = 0
+end
+
+begin
+     remote = Dell
+     prog = elisa
+     button = MENU
+     config = toggle_menu_key
+     repeat = 0
+     delay = 0
+end
+
+begin
+     remote = Dell
+     prog = elisa
+     button = #
+     config = toggle_fullscreen_key
+     repeat = 0
+     delay = 0
+end
+
+begin
+     remote = Dell
+     prog = elisa
+     button = LEFT
+     config = move_left_key
+     repeat = 0
+     delay = 0
+end
+
+# End of elisa keybinds.

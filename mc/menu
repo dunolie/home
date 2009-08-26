@@ -1,0 +1,181 @@
+#####################
+####                     ####
+####    Added by me    ####
+####                     ####
+#####################
+
+#### Video File Menu ####
+
+#### Video File Menu ####
+
++ f \.avi$ | f \.mpg$ | f \.mpeg$ | f \.mkv$ | f \.ts$ | f \.rm$ | f \.vob$ | f \.rmvb$ | f \.flv$ | f \.wmv | f \.ram | f \.mp4 | f \.asf | f \.ogm | f \.m2v | f \.evo$ $ & t n
+1       ffmpeg -i (show audio/video info)
+        ffmpeg -i %f
+ 
+2       vlc
+        vlc %f
+
+3       mplayer
+        mplayer %f
+
+4       Encode to h264 hq 96 700
+        enc2h264 hq 96 700 %f
+
+#### Audio File Menu ####
+
++ f \.wav$ | f \.mp3$ | f \.au$ | f \.aiff$ | f \.snd$ | f \.mp2$ | f \.flac$ | f \.wma$ | f \.snd$ | f \.mpc$ | f \.ac3$ | f \.mid$ | f \.ogg$ $ & t n
+1       mplayer
+        mplayer %f
+ 
+2       aplay
+        aplay %f
+
+3       ffmpeg -i (show audio/video info)
+        ffmpeg -i %f
+       
+4       audacity
+        audacity %f
+
+5       Encode to *.mp3
+        enc2mp3 %f
+
+#### Disk Image File Menu ####
+
++ f \.iso$ | f \.ccd$ | f \.img$ | f \.nrg$ | f \.mdf$ | f \.cue$ | f \.bin$ | f \.daa$ | f \.b6t$ | f \.b6i$ & t r & ! t t
+1       mountiso
+        mountiso %f &
+ 
+2       isomaster
+        isomaster %f
+
+3       Convert BIN to ISO
+        bin2iso %f
+
+4       Poweriso convert image to ISO
+        all2iso %f
+
+5       Convert CCD to ISO
+        myccd2iso %f
+
+#### Image File Menu ####
+
++ f \.jpg$ | f \.jpeg$ | f \.bmp$ | f \.png$ | f \.gif$ | f \.svg$ & t r & ! t t
+1       feh
+        feh %f
+
+2       gimp
+        gimp %f
+
+3       gqview
+        gqview %f
+
+4       mirage
+        mirage %f
+
+#### PDF File Menu ####
+
++ f \.pdf$ & t r & ! t t
+1       epdfview
+        epdfview %f 
+
+2       xpdf
+        xpdf %f
+
+#### Text File Menu ####
+
++ f \.txt$ | f \.nfo$ | f \.cfg$ | f \.log$ | f \.srt$ | f \.sub$ | f \.ssa$ & t r & ! t t
+1       leafpad
+        leafpad %f
+
+#### Archive File Menu ####
+
++ f \.zip$ | f \.gz$ | f \.rar$ | f \.bz2$ | f \.tgz$ | f \.7z$ | f \.ace$ & t r & ! t t
+1       xarchiver
+        xarchiver %f
+
+2       Extract *.tar.gz
+        tar -xzvf %f
+
+3       Extract *.tar.bz2
+        tar -xjvf %f
+
+4       Extract *.rar Full Path
+        unrar x %f
+
+5       Extract *.rar Current Dir
+        unrar e %f
+
+6       Extract *.zip
+        unzip %f
+
+7       Extract *.7z Full Path
+        7z x %f
+
+8       Extract *.7z Current Dir
+        7z e %f
+
+9       Extract *.ace Full Path
+        unace x %f
+
+a       Extract *.ace Current Dir
+        unace e %f
+
+b       Extract *.rar in *.rar_dir directory
+        unrar2dir %f
+
+c       Extract *.zip in *.zip_dir directory
+        unzip2dir %f
+
+d       Pacman Install Package
+        sudo pacman -A %f
+
+e       Pacman Upgrade Package
+        sudo pacman -U %f
+
+#### Windows Executable File Menu ####
+
++ f \.exe$ | f \.bat$ | f \.msi$ & t r & ! t t
+1       wine
+        wine %f
+
+#### Internet File Menu ####
+
++ f \.htm$ | f \.html$ | f \.php$ | f \.asp$ & t r & ! t t
+1       kazehakase
+        kazehakase %f
+
+2       swiftfox
+        swiftfox %f
+
+#### Document File Menu ####
+
++ f \.doc$ | f \.rtf$ | f \.php$ | f \.asp$ & t r & ! t t
+1       abiword
+        abiword %f
+
+2       OpenOffice Writer
+        soffice -writer %f
+
+#### Spread Sheet File Menu ####
+
++ f \.xls$ | f \.csv$ & t r & ! t t
+1       gnumeric
+        gnumeric %f
+
+#### Presentation File Menu ####
+
++ f \.ppt$ | f \.pps$ & t r & ! t t
+1       OpenOffice Impress
+        soffice -impress %f
+
+#### Java File Menu ####
+
++ f \.jar$ & t r & ! t t
+1       Execute
+        java -jar %f
+
+#### Help/Manual File Menu ####
+
++ f \.chm$ | f \.pps$ & t r & ! t t
+1       xchm
+        xchm %f
