@@ -1,6 +1,7 @@
 #
 # ~/.screenrc
-# By: MreDD     mredd (at) 0tue0.com
+# M. reDD MreDD@0tue0.com
+# http://pyrrhous.com
 #
 ###############################
 term screen-256color
@@ -100,7 +101,7 @@ bind F eval "caption always"    "hardstatus alwayslastline"
 # Backticks
 backtick 1 30 30 cat $HOME/.get_mail
 caption always '%{= .w} Load: %l %= | %= %1`'
-hardstatus alwayslastline '%{= .w} %{+b}%{w}%n%{= 3} %= %{= w}%-w%{+b g}%n`%t%{-b r}%{w}%+w %= %{w}%c %{r}- %{w}%m%{.r}/%{w}%d%{.r}/%{.w}%y %{g}|%H|'
+hardstatus alwayslastline '%{= .w} %{+b}%{w}%n%{= 3} %= %{= w}%-w%{+b b}%n`%t%{-b r}%{w}%+w %= %{w}%c %{b}- %{w}%m%{.b}/%{w}%d%{.b}/%{.w}%y %{b}|%H|'
 
 # bind = resize =
 # bind + resize +1
