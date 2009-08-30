@@ -1,0 +1,39 @@
+# Crustal Balls .. moc theme
+# by: M.reDD - mredd -at- 0tue0.com
+# http://m-redd.com
+# Blue theme to match my current configs
+# Date: Sun Aug 30 12:55:44 PDT 2009
+
+
+background		      = white  	      default	normal
+frame			      = blue            default     normal
+window_title		= cyan		black	      bold
+directory		      = blue	  	default 	bold
+selected_directory	= red 		default	normal
+playlist		      = blue		black	      normal
+selected_playlist	      = red		      default	bold
+file			      = cyan		default     normal
+selected_file		= red		      black	      bold
+marked_file		      = white		default	bold
+marked_selected_file	= red		      white	      bold
+info			      = green		default	normal
+status			= blue		black	      bold
+title			      = blue		default	bold
+state			      = red		      default	bold,blink
+current_time		= blue		default	bold
+time_left		      = cyan		default	normal
+total_time		      = black		default	bold
+time_total_frames	      = black		default	normal
+sound_parameters	      = green		black	      bold
+legend			= red		      black       normal
+disabled		      = black		default	bold
+enabled			= blue		default	bold
+empty_mixer_bar		= white		black 	bold
+filled_mixer_bar	      = blue		black	      bold
+empty_time_bar		= red		      default	bold
+filled_time_bar		= black		default	normal
+entry			      = cyan		default	bold
+entry_title		      = blue		black 	bold
+error			      = red		      yellow	bold
+message			= magenta	      black	      bold
+plist_time		      = cyan		black	bold
