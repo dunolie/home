@@ -1,17 +1,10 @@
 #!/bin/bash
 # ~/.bashrc
+# http://0tue0.com
+# tueGroup
+# Smaller than Life Projects
 # By: MreDD     mredd (at) 0tue0.com
 ##################
-# Some common user and system files,
-# do not use `: ${xx=yy}' here.
-#
-#profile='$HOME/.profile'
-#xdefaults='$HOME/.Xdefaults'
-#xresources='$HOME/.Xresources'
-#xmodmap='$HOME/.Xmodmap'
-#session='$HOME/.xsession'
-#xinitrc='$HOME/.xinitrc'
-
 #
 set show-all-if-ambiguous on
 
@@ -142,10 +135,8 @@ eval $(dircolors -b /etc/DIR_COLORS)
 fi
 fi
 alias ps='ps --forest'
- PS1="${R}[${LG}\u${R}@${LG}\h${R}]──${R}[${C}\$(tty | sed -e 's:/dev/::')${R}:${G}\$(ls -1 | wc -l | sed 's: ::g') ${C}files${R}:${G}\$(ls -lah | grep -m 1 total | sed 's/total //')b${R}] \n ${O}┌─${O}[${R}\${NEW_PWD}${O}] \n ${O}└─${R}:${G}(${LG} "
-# without colors: PS1="[\u@\h \${NEW_PWD}]\\$ "
-# extra backslash in front of \$ to make bash colorize the prompt
-#
+ PS1="${B}[${LG}\u${R}@${LG}\h${B}]──${B}[${C}\$(tty | sed -e 's:/dev/::')${R}:${G}\$(ls -1 | wc -l | sed 's: ::g') ${C}files${R}:${G}\$(ls -lah | grep -m 1 total | sed 's/total //')b${B}] \n ${B}┌─${B}[${W}\${NEW_PWD}${B}] \n ${B}└─${R}:${B}(${LG} "
+
 complete -cf sudo
 declare -x EDITOR=vim
 #

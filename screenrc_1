@@ -89,6 +89,7 @@ screen -t moc 3
 screen -t ssh 4
 screen -t ftp 5
 screen -t telnet 6
+screen -t git 7
 #
 #
 #
@@ -99,8 +100,8 @@ bind F eval "caption always"    "hardstatus alwayslastline"
 # Backticks
 backtick 1 30 30 cat $HOME/.get_mail
 # Status
-caption always '%{= .w} Load: %l %= | %= %1`'
-hardstatus alwayslastline '%{= .w} %{+b}%{w}%n%{= 3} %= %{= w}%-w%{+b b}%n`%t%{-b r}%{w}%+w %= %{w}%c %{b}- %{w}%m%{.b}/%{w}%d%{.b}/%{.w}%y %{b}|%H|'
+caption always '%{= .w} %{b}Load: %l %= %{.w}| %= %{b}%1`'
+hardstatus alwayslastline '%{= .w} %{b}%n%{= 3} %= %{= w}%-w%{+b b}%n`%t%{-b r}%{w}%+w %= %{w}%c %{b}- %{w}%m%{.b}/%{w}%d%{.b}/%{.w}%y %{b}|%H|'
 
 # bind = resize =
 # bind + resize +1
