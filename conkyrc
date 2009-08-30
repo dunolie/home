@@ -1,0 +1,41 @@
+#.conkyrc
+#draw_borders no
+
+#border_margin 1
+
+#shades
+#draw_shades no
+
+#position
+#gap_x 25
+
+#gap_y 0
+
+#alignment top_right
+
+#behaviour
+update_interval 2
+
+#colour
+#default_color  555555
+
+#default_shade_color 000000
+#own_window yes
+#own_window_transparent yes
+#own_window_type override
+#own_window_type root
+#own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+#font
+#use_xft yes
+
+#xftfont Pragmata:size=8
+#xftfont snap:size=8
+
+#to prevent window from moving
+#use_spacer none
+
+#minimum_size 100 20
+
+TEXT
+Email: 0tue0(${execi 300 python ~/scripts/conky-scripts/mail/0tue0.py}) Gmail(${execi 300 python ~/scripts/conky-scripts/mail/gmail.py}) Pyrrhous(${execi 300 python ~/scripts/conky-scripts/mail/pyrrhous.py}) ${execpi 900 conkyEmail --template=/home/mredd/scripts/conky-scripts/mail/conkyhotmail.template}

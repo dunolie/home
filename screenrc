@@ -1,7 +1,7 @@
 #
 # ~/.screenrc
-# M. reDD MreDD@0tue0.com
-# http://pyrrhous.com
+# M. reDD  - mredd -at- 0tue0.com
+# http://m-redd.com
 #
 ###############################
 term screen-256color
@@ -9,8 +9,13 @@ term screen-256color
 #name the session
 sessionname scrn
 
-# This is how one can set a reattach password:
-# password ODSJQf.4IJN7E    # "1234"
+# ============================
+# Password
+# ============================
+# password SZnBqiqMtfa6k
+# Do NOT remove the comment if
+# you don't know what this does!
+# (TODO describe the effect - obviously)
 
 # no annoying audible bell, please
 vbell on

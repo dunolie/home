@@ -1,0 +1,86 @@
+#
+# .xbindkeysrc
+#keystate_numlock = enable
+#keystate_capslock = enable
+#keystate_scrolllock= enable
+
+#"(urxvt -name 'shell')"
+#    m:0x50 + c:36
+#    Mod2+Mod4 + Return
+
+
+## specify a mouse button
+#"xterm"
+#  control + b:2
+
+
+## Me
+# Transparency
+
+# Menu
+"(sh $HOME/scripts/system/dzenmenu.sh)"
+   m:0x0 + c:180
+   G6
+"(sh $HOME/scripts/system/9menu.sh)"
+   m:0x0 + c:177
+   G3   
+
+#  Media Buttons
+# Volume Wheel
+"(amixer set PCM 4%-)"
+    m:0x0 + c:122
+    XF86AudioLowerVolume
+
+"(amixer set PCM 4%+)"
+    m:0x0 + c:123
+    XF86AudioRaiseVolum
+
+# Mute
+"(amixer set PCM 0% unmute)"
+    m:0x0 + c:121
+    XF86AudioMute
+
+# Play
+"(mocp -G)"
+    m:0x0 + c:172
+    XF86AudioPlay XF86AudioPause XF86AudioPlay XF86AudioPause
+
+# Stop
+"(mocp -s)"
+    m:0x0 + c:174
+    XF86AudioStop
+
+# Previous
+"(mocp -r)"
+    m:0x0 + c:173
+    XF86AudioPrev
+
+# Skip
+"(mocp -f)"
+    m:0x0 + c:171
+    XF86AudioNext
+
+# PrintScreen Key
+"(/home/mredd/scripts/image/scrotsnap.sh)"
+    m:0x0 + c:107
+    Print
+# Delay 5 sec PrintScreen Key Combo
+"(/home/mredd/scripts/image/scrotdelay.sh)"
+    m:0x40 + c:107
+    Mod4 + Print
+# Start TV
+"(v4l2-ctl -i 1 && vlc --hdtv-fix --deinterlace-mode=b --disable-screensaver --control lirc /dev/video0)"
+    m:0x0 + c:175
+    G1
+"(v4l2-ctl -i 1 && mplayer -ao alsa -vf pp=lb /dev/video0 &)"
+    m:0x0 + c:176
+    G2
+
+# Games
+"($HOME/games/bin/armagetronad)"
+    m:0x0 + c:178
+    G4
+
+##################################
+# End of xbindkeys configuration #
+##################################

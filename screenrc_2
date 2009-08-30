@@ -1,16 +1,16 @@
 #
 # ~/.screenrc
-# M. reDD - mredd -at- 0tue0.com
+# M. reDD - MreDD -at- 0tue0.com
 # http://m-redd.com
 #
 ###############################
 term screen-256color
 #terminfo rxvt-unicode 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
 #name the session
-sessionname com
+sessionname edit
 
 # This is how one can set a reattach password:
-#password     # "1234"
+# password ODSJQf.4IJN7E    # "1234"
 
 # no annoying audible bell, please
 vbell on
@@ -82,13 +82,10 @@ bind '}' history
 #
 
 # shelltitle '$ | '
-screen -t shell 0  
-screen -t irc 1
-screen -t cim 2
-screen -t moc 3
-screen -t ssh 4
-screen -t ftp 5
-screen -t telnet 6
+screen -t shell 0
+screen -t vim 1 
+screen -t mc 2
+screen -t www 3
 #
 #
 #
@@ -96,11 +93,8 @@ screen -t telnet 6
 #
 bind f eval "caption splitonly" "hardstatus ignore"
 bind F eval "caption always"    "hardstatus alwayslastline"
-# Backticks
-backtick 1 30 30 cat $HOME/.get_mail
 # Status
-caption always '%{= .w} Load: %l %= | %= %1`'
-hardstatus alwayslastline '%{= .w} %{+b}%{w}%n%{= 3} %= %{= w}%-w%{+b b}%n`%t%{-b r}%{w}%+w %= %{w}%c %{b}- %{w}%m%{.b}/%{w}%d%{.b}/%{.w}%y %{b}|%H|'
+hardstatus alwayslastline '%{= .w} %{+b}%{w}%n%{= 3} %= %{= w}%-w%{+b b}%n`%t%{-b b}%{w}%+w %= %{w}%c %{b}- %{w}%m%{.b}/%{w}%d%{.b}/%{.w}%y %{b}|%H|'
 
 # bind = resize =
 # bind + resize +1
