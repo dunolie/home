@@ -106,10 +106,10 @@ ShowTime		= IfAvailable
 
 # Theme file. This can be absolute path or relative to
 # /usr/share/moc/themes/ (depends on installation prefix) or ~/.moc/themes/
- Theme			= test
+ Theme			= crustal_balls
 
 # The theme used when running on on xterm
- XTermTheme		= test
+ XTermTheme		= crustal_balls
 
 # MOC directory - where pid file, socket, and state files are stored.
 # You can use ~ at the begining
