@@ -9,7 +9,7 @@ ReadTags		= yes
 # Directory in which you store music files, if you specify it, you will be able
 # to quickly go to this directory with the '-m' parameter or the 'm' command.
 # This can also point to a playlist.
-MusicDir		= "/home/mredd/mnt/Music"
+MusicDir		= "~/mnt/Music"
 
 # How to sort? FileName is the only option for now.
 Sort			= FileName
@@ -148,16 +148,16 @@ ASCIILines		= yes
 
 # FastDirs, these allow you jump directly to a directory, the key bindings are
 # in the keymap file.
-Fastdir1 = "/mnt/p3/Music/uritmusic/AudioBooks/"
-Fastdir2 = "/mnt/p3/Music/uritmusic/Audio/Classical/"
-Fastdir3 = "/mnt/p3/Music/uritmusic/Audio/Electro/"
-Fastdir4 = "/mnt/p3/Music/uritmusic/Audio/HipHop - Rap/"
-Fastdir5 = "/mnt/p3/Music/uritmusic/Audio/Indie/"
-Fastdir6 = "/mnt/p3/Music/uritmusic/Audio/Jazz - Soul/"
-Fastdir7 = "/mnt/p3/Music/uritmusic/Audio/Punk - Reggae - Ska/"
-Fastdir8 = "/mnt/p3/Music/uritmusic/Audio/Rock/"
-Fastdir9 = "/mnt/p3/Music/uritmusic/Audio/White Collection/"
-Fastdir10 ="/mnt/p3/Music/uritmusic/OST/"
+Fastdir1 = "/home/mredd/mnt/Music/Audio/Classical/"
+Fastdir2 = "/home/mredd/mnt/Music/Audio/Comedy/"
+Fastdir3 = "/home/mredd/mnt/Music/Audio/Country - Folk/"
+Fastdir4 = "/home/mredd/mnt/Music/Audio/HipHop - Rap/"
+Fastdir5 = "/home/mredd/mnt/Music/Audio/Indie/"
+Fastdir6 = "/home/mredd/mnt/Music/Audio/Jazz - Soul/"
+Fastdir7 = "/home/mredd/mnt/Music/Audio/Punk - Reggae - Ska/"
+Fastdir8 = "/home/mredd/mnt/Music/Audio/Rock/"
+Fastdir9 = "/home/mredd/mnt/Music/OST/"
+Fastdir10 ="/home/mredd/mnt/Music/AudioBooks/"
 
 # How fast to seek? Number of seconds per key stroke.
 SeekTime		= 2
