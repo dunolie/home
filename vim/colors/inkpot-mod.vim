@@ -85,7 +85,7 @@ if has("gui_running")
     hi FoldColumn     gui=NONE   guifg=#8b8bcd   guibg=#2e2e2e
 
     hi Directory      gui=NONE   guifg=#00ff8b   guibg=NONE
-    hi LineNr         gui=NONE   guifg=#8b8bcd   guibg=#2e2e2e gui=underline
+    hi LineNr         gui=NONE   guifg=#488dd2   guibg=#2e2e2e gui=underline
     hi NonText        gui=BOLD   guifg=#8b8bcd   guibg=NONE
     hi SpecialKey     gui=BOLD   guifg=#ab60ed   guibg=NONE
     hi Title          gui=BOLD   guifg=#af4f4b   guibg=NONE
@@ -173,7 +173,7 @@ else
     exec "hi FoldColumn     cterm=NONE   ctermfg=" . <SID>X(39) . " ctermbg=" . <SID>X(80)
 
     exec "hi Directory      cterm=NONE   ctermfg=" . <SID>X(28) . " ctermbg=" . "NONE"
-    exec "hi LineNr         cterm=NONE cterm=underline  ctermfg=White ctermbg=" . "NONE"
+    exec "hi LineNr         cterm=NONE ctermfg=32 cterm=underline  ctermbg=" . "NONE"
     exec "hi NonText        cterm=BOLD   ctermfg=" . <SID>X(39) . " ctermbg=" . "NONE"
     exec "hi SpecialKey     cterm=BOLD   ctermfg=" . <SID>X(55) . " ctermbg=" . "NONE"
     exec "hi Title          cterm=BOLD   ctermfg=" . <SID>X(48) . " ctermbg=" . "NONE"
