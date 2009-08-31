@@ -39,7 +39,7 @@ set wildmode=longest:full
 set wildmenu                  " menu has tab completion
 let maplocalleader=','        " all my macros start with ,
 
-colorscheme inkpot-mod
+colorscheme xoria256-mod
 
 " ---------------------------------------------------------------------------
 " status line 

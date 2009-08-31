@@ -233,7 +233,7 @@ xscreensaver.Dialog.dateFont:           -*-dina-medium-r-*-*-12-*-*-*-*-*-*-*
 xscreensaver.passwd.passwdFont:         -*-dina-bold-r-*-*-12-*-*-*-*-*-*-*
 !general dialog box (affects main hostname, username, password text)
 xscreensaver.Dialog.foreground:         #ddccbb
-xscreensaver.Dialog.background:         191717
+xscreensaver.Dialog.background:         #191717
 xscreensaver.Dialog.topShadowColor:     #434343
 xscreensaver.Dialog.bottomShadowColor:  #424242
 xscreensaver.Dialog.Button.foreground:  #ffffff
@@ -271,7 +271,7 @@ xcalc.ti.bevel.screen.M.background:    #000000
 xcalc.ti.bevel.screen.M.foreground:    #C1A968
 xcalc.ti.bevel.screen.P.background:    #000000
 xcalc.ti.bevel.screen.P.foreground:    Yellow
-xcalc.ti.Command.foreground:  #504949
+xcalc.ti.Command.foreground:  #488dd2
 xcalc.ti.Command.background:  #191717
 xcalc.ti.button5.background:  #000000
 xcalc.ti.button19.background: #191717
