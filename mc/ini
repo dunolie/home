@@ -70,7 +70,7 @@ horizontal_split=0
 
 [Layout]
 equal_split=1
-first_panel_size=76
+first_panel_size=74
 message_visible=1
 keybar_visible=1
 xterm_title=1
@@ -82,7 +82,7 @@ permission_mode=0
 filetype_mode=1
 
 [Dirs]
-other_dir=/home/mredd/apps
+other_dir=/home/mredd/mnt
 current_is_left=1
 
 [New Left Panel]
@@ -116,10 +116,11 @@ ftpfs_password=anonymous@
 ftp_proxy_host=gate
 display_codepage=Other_8_bit
 
-[Colors]
-base_color=normal=,default:selected=cyan,default:marked=,default:markselect=,:menu=,:menuhot=,:menusel=,:menuhotsel=,:dnormal=,:dfocus=,:dhotnormal=,:dhotfocus=,:input=,:reverse=,:executable=,default:directory=,default:link=,default:device=,default:special=,:core=,:helpnormal=,:helplink=,:helpslink=,:
 
 [Panelize]
 Find *.orig after patching=find . -name *.orig -print
 Find SUID and SGID programs=find . ( ( -perm -04000 -a -perm +011 ) -o ( -perm -02000 -a -perm +01 ) ) -print
 Find rejects after patching=find . -name *.rej -print
+
+[Colors]
+base_color=blue,default:normal=blue,default:selected=blue,default:marked=white,default:markselect=green,default:errors=red,default:menu=blue,default:reverse=white,default:dnormal=blue,default:dfocus=gray,default:dhotnormal=brightblue,default:dhotfocus=brightcyan,default:viewunderline=brightgreen,default:menuhot=blue,default:menusel=blue,default:menuhotsel=blue,default:helpnormal=blue,default:helpitalic=blue,default:helpbold=blue,default:helplink=blue,default:helpslink=blue,default:gauge=white,default:input=gray,default:directory=cyan,default:executable=brightgreen,default:link=brightblue,default:stalelink=brightblue,default:device=brightcyan,default:core=blue,default:special=cyan,default:editnormal=blue,default:editbold=cyan,default:editmarked=brightgreen,default:errdhotnormal=cyan,default:errdhotfocus=blue,default
