@@ -100,7 +100,7 @@ bind F eval "caption always"    "hardstatus alwayslastline"
 # Backticks
 backtick 1 60 60 cat $HOME/.get_mail
 #caption always '%{= .w} Load: %l %= | %= %1`'
-hardstatus alwayslastline '%{= .w} %{b}%n%{= 3} %= %{= w}%-w%{+b b}%n`%t%{-b r}%{w}%+w %= %{w}%c %{b}- %{w}%m%{.b}/%{w}%d%{.b}/%{.w}%y %{b}|%H|' 
+hardstatus alwayslastline '%{= .w} %{b}%n%{= 3} %= %{= w}%-w%{c}%n%{.r}`%{b}%t%{-b r}%{w}%+w %= %{w}%c %{b}- %{w}%m%{.b}/%{w}%d%{.b}/%{.w}%y %{b}|%H|'  
 # bind = resize =
 # bind + resize +1
 # bind - resize -1
