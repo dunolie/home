@@ -1,0 +1,41 @@
+# Midnight Commander Theme
+# Crustal Balls
+#  by: M. reDD mredd -at- 0tue0.com
+# http://m-redd.com
+#######################
+BASE_COLOR=blue,default
+NORMAL=blue,default
+SELECTED=blue,default
+MARKED=white,default
+MARKSELECT=green,default
+ERRORS=red,default
+MENU=blue,default
+REVERSE=white,default
+DNORMAL=blue,default
+DFOCUS=gray,default
+DHOTNORMAL=brightblue,default
+DHOTFOCUS=brightcyan,default
+VIEWUNDERLINE=brightgreen,default
+MENUHOT=blue,default
+MENUSEL=blue,default
+MENUHOTSEL=blue,default
+HELPNORMAL=blue,default
+HELPITALIC=blue,default
+HELPBOLD=blue,default
+HELPLINK=blue,default
+HELPSLINK=blue,default
+GAUGE=white,default
+INPUT=gray,default
+DIRECTORY=cyan,default
+EXECUTABLE=brightgreen,default
+LINK=brightblue,default
+STALELINK=brightblue,default
+DEVICE=brightcyan,default
+CORE=blue,default
+SPECIAL=cyan,default
+EDITNORMAL=blue,default
+EDITBOLD=cyan,default
+EDITMARKED=brightgreen,default
+ERRDHOTNORMAL=cyan,default
+ERRDHOTFOCUS=blue,default
+
