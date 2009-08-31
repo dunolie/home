@@ -39,7 +39,7 @@ set wildmode=longest:full
 set wildmenu                  " menu has tab completion
 let maplocalleader=','        " all my macros start with ,
 
-colorscheme xoria256-mod
+colorscheme inkpot-mod
 
 " ---------------------------------------------------------------------------
 " status line 
@@ -136,6 +136,8 @@ if v:version >= 700
 
   setlocal spell spelllang=en
 endif
+set mousemodel=popup
+set spellfile=~/.spellfile.add
 
 " Nerdtree stuff
 "Increase window size to 25 columns
