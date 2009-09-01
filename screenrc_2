@@ -85,7 +85,7 @@ bind '}' history
 screen -t shell 0
 screen -t vim 1 vim
 screen -t mc 2 mc ~/ ~/mnt
-screen -t www 3 cd ~/dls;elinks https://ssl.scroogle.org
+screen -t www 3 elinks https://ssl.scroogle.org
 #
 #
 #
