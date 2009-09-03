@@ -87,7 +87,7 @@ let s:colors256 = [
             \ ["FoldedColumn",  "",     "39",   "190",  "",         ""   ],
             \ ["FoldColumn",    "",     "38",   "234",  "",         ""   ],
             \ ["Directory",     "",     "28",   "",     "",         ""   ],
-            \ ["LineNr",        "",     "32",   "",   "",         ""   ],
+            \ ["LineNr",        "",     "37",   "",   "",         ""   ],
             \ ["NonText",       "",     "244",  "16",   "",         ""   ],
             \ ["SpecialKey",    "",     "190",  "",     "",         ""   ],
             \ ["Title",         "bold", "98",   "",     "",         ""   ],
@@ -110,7 +110,7 @@ let s:colors256 = [
 
 let s:colorvim7 = [
             \ ["Pmenu",         "",     "228",  "236",  "",         ""   ],
-            \ ["PmenuSel",      "bold", "226",  "232",  "",         ""   ],
+            \ ["PmenuSel",      "bold", "226",  "237",  "",         ""   ],
             \ ["PmenuSbar",     "",     "119",  "16",   "",         ""   ],
             \ ["PmenuThumb",    "",     "11",   "16",   "",         ""   ],
             \ ["SpellBad",      "underline", "","",     "undercurl","160"],

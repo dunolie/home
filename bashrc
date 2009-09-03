@@ -135,7 +135,7 @@ eval $(dircolors -b /etc/DIR_COLORS)
 fi
 fi
 alias ps='ps --forest'
- PS1="${B}[${LG}\u${R}@${LG}\h${B}]──${B}[${C}\$(tty | sed -e 's:/dev/::')${R}:${G}\$(ls -1 | wc -l | sed 's: ::g') ${C}files${R}:${G}\$(ls -lah | grep -m 1 total | sed 's/total //')b${B}] \n ${B}┌─${B}[${W}\${NEW_PWD}${B}] \n ${B}└─${R}:${B}(${LG} "
+ PS1="${G}[${LG}\u${R}@${O}\h${G}]──[${C}\$(tty | sed -e 's:/dev/::'):\$(ls -1 | wc -l | sed 's: ::g') files${R}:\$(ls -lah | grep -m 1 total | sed 's/total //')b${G}] \n ┌─[\${NEW_PWD}] \n ${G}└─${R}:${G}(${LG} "
 
 complete -cf sudo
 declare -x EDITOR=vim

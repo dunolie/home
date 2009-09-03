@@ -54,11 +54,11 @@ hi PmenuThumb   ctermbg=252 guibg=#d0d0d0
 hi Search       ctermfg=0   guifg=#000000 ctermbg=233 guibg=#afdf5f
 hi SignColumn   ctermfg=248 guifg=#a8a8a8
 hi SpecialKey   ctermfg=77  guifg=#5fdf5f
-hi StatusLine   ctermfg=32 ctermbg=233 guibg=#4e4e4e cterm=bold gui=bold
+hi StatusLine   ctermfg=37 ctermbg=233 guibg=#4e4e4e cterm=bold gui=bold
 hi StatusLineNC ctermbg=233 guibg=#3a3a3a cterm=none gui=none
-hi TabLine      ctermfg=32  ctermbg=233 guifg=fg guibg=#666666 cterm=underline gui=underline
-hi TabLineFill  ctermfg=32  guifg=fg      ctermbg=233 guibg=#666666 cterm=underline gui=underline
-hi VertSplit    ctermfg=32 guifg=#3a3a3a ctermbg=233 guibg=#3a3a3a cterm=none gui=none
+hi TabLine      ctermfg=37  ctermbg=233 guifg=fg guibg=#666666 cterm=underline gui=underline
+hi TabLineFill  ctermfg=37  guifg=fg      ctermbg=233 guibg=#666666 cterm=underline gui=underline
+hi VertSplit    ctermfg=37 guifg=#3a3a3a ctermbg=233 guibg=#3a3a3a cterm=none gui=none
 hi Visual       ctermfg=24  guifg=#005f87 ctermbg=153 guibg=#afdfff
 hi VIsualNOS    ctermfg=24  guifg=#005f87 ctermbg=153 guibg=#afdfff cterm=none gui=none
 hi WildMenu     ctermfg=0   guifg=#000000 ctermbg=184 guibg=#dfdf00 cterm=bold gui=bold
@@ -70,15 +70,15 @@ hi Error        ctermfg=15  guifg=#ffffff ctermbg=1   guibg=#800000
 hi ErrorMsg     ctermfg=15  guifg=#ffffff ctermbg=1   guibg=#800000
 hi Identifier   ctermfg=182 guifg=#dfafdf cterm=none
 hi Ignore       ctermfg=238 guifg=#444444
-hi LineNr       ctermfg=32 ctermbg=233 guifg=#488dd2 cterm=underline
+hi LineNr       ctermfg=37 ctermbg=233 guifg=#488dd2 cterm=underline
 hi MatchParen   ctermfg=188 guifg=#dfdfdf ctermbg=68  guibg=#5f87df cterm=bold gui=bold
-hi Number       ctermfg=32 guifg=#488dd2
+hi Number       ctermfg=37 guifg=#488dd2
 hi PreProc      ctermfg=150 guifg=#afdf87
-hi Special      ctermfg=32 guifg=#df8787
+hi Special      ctermfg=37 guifg=#df8787
 hi Statement    ctermfg=110 guifg=#87afdf cterm=none gui=none
 hi Todo         ctermfg=0   guifg=#000000 ctermbg=184 guibg=#dfdf00
 hi Type         ctermfg=146 guifg=#afafdf cterm=none gui=none
-hi Underlined   ctermfg=32  guifg=#00afff cterm=underline gui=underline
+hi Underlined   ctermfg=37  guifg=#00afff cterm=underline gui=underline
 
 "" Special
 """ .diff
