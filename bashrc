@@ -23,7 +23,7 @@ Xft.hintstyle:  hintslight
 c64*font:                xft:Terminus:autohint=false:antialias=false:size=7
 c64*background:          #191717
 c64*foreground:          #006e85
-!!
+
 ! Terminal theme --
 ! Main
 *background:    #191717
