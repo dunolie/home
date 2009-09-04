@@ -192,7 +192,7 @@ echo ""
 fortune
 echo "";
 
-PS1="${G}[${LG}\u${R}@${DG}\h${G}]──[${EMC}\$(tty | sed -e 's:/dev/::'):${EMK}\$(ls -1 | wc -l | sed 's: ::g') ${EMR}files${R}:\$(ls -lah | grep -m 1 total | sed 's/total //')b${G}] \n ┌─[${EMM}\${NEW_PWD}${G}] \n ${G}└─${R}:${G}(${LG} "
+PS1="${LG}[${LG}\u${R}@${G}\h${LG}]──[${EMC}\$(tty | sed -e 's:/dev/::'):${O}\$(ls -1 | wc -l | sed 's: ::g') ${B}files${LG}:${R}\$(ls -lah | grep -m 1 total | sed 's/total //')b${LG}] \n ┌─[${EMM}\${NEW_PWD}${LG}] \n ${LG}└─${R}:${G}(${LG} "
 
 #EOF
 ##################
