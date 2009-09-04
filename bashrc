@@ -296,3 +296,4 @@ xcalc.ti.button39.background: #191717
 XCalc*Cursor:                 hand2
 XCalc*ShapeStyle:             rectangle
 
+! End
