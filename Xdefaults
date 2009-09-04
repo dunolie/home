@@ -24,33 +24,41 @@ c64*font:                xft:Terminus:autohint=false:antialias=false:size=7
 c64*background:          #191717
 c64*foreground:          #006e85
 
-!terminal theme --
-
+! Terminal theme --
+! Main
 *background:    #191717
 *foreground:    #006e85
-*color0:        #000000
-*color1:        #98565e
-*color2:        #66825d
-*color3:        #969176
-*color4:        #4d6585
+! Black
+*color0:        #060101
+*color8:        #66825d
+! Red
+*color1:        #ffa07a
+*color9:        #e9967a
+! Green
+*color2:        #527b66
+*color10:       #4c5f46
+! Yellow
+*color3:        #ded838
+*color11:       #efef60
+! Blue
+*color4:        #6da3ae
+*color12:       #516f98
+! Magenta
 *color5:        #967395
-*color6:        #5f7f7b
+*color13:       #826ab1
+! Cyan
+*color6:        #69a2b0
+*color14:       #2d9bb7
+! White
 *color7:        #b3b3b3
-*color8:        #737373
-*color9:        #cfa3a9
-*color10:       #caf7bb
-*color11:       #fff8bc
-*color12:       #83a3be
-*color13:       #bba9cf
-*color14:       #96cccc
-*color15:       #ffffff
+*color15:       #eeeeef
 
 
 ! rxvt-unicode --
 
 URxvt*termName:                   rxvt-256color
 ! font preference
-URxvt*font:                       xft:Pragmata:pixelsize=13:antialias=true:bold:hinting=true
+URxvt*font:                       xft:Pragmata:pixelsize=13:antialias=true:hinting=true
 URxvt*boldFont:                   xft:Pragmata:pixelsize=14:antialias=true:bold:hinting=true
 URxvt*italicFont:                 xft:Terminus:size=13:antialias=true:hinting=true
 URxvt*bolditalicFont:             xft:Terminus:size=13:antialias=true:hinting=true
@@ -134,7 +142,7 @@ URxvt*matcher.launcher.2: gvim +$2 $1
 URxvt*cursorColor:       #006e85
 URxvt*cursorColor2:      #000000
 URxvt*background:        #191717
-URxvt*foreground:        #006e85
+URxvt*foreground:        #276b47
 URxvt*colorBD:           #ffffff
 URxvt*colorIT:           #bbbbbb
 URxvt*colorUL:           #999999
@@ -203,7 +211,7 @@ lal*format:     %a %b %d %l:%M%P
 
 x11-ssh-askpass*font:                   -*-dina-medium-r-*-*-12-*-*-*-*-*-*-*
 x11-ssh-askpass*background:             #191717
-x11-ssh-askpass*foreground:             #006e85
+x11-ssh-askpass*foreground:             #276b47
 x11-ssh-askpass.Button*background:      #000000
 x11-ssh-askpass.Indicator*foreground:   #ff9900
 x11-ssh-askpass.Indicator*background:   #FFFFFF
@@ -226,7 +234,7 @@ xscreensaver.Dialog.foreground:         #006e85
 xscreensaver.Dialog.background:         #191717
 xscreensaver.Dialog.topShadowColor:     #434343
 xscreensaver.Dialog.bottomShadowColor:  #424242
-xscreensaver.Dialog.Button.foreground:  #006e85
+xscreensaver.Dialog.Button.foreground:  #276b47
 xscreensaver.Dialog.Button.background:  #191717
 !username/password input box and date text colour
 xscreensaver.Dialog.text.foreground:    #006e85
@@ -235,7 +243,7 @@ xscreensaver.Dialog.internalBorderWidth:24
 xscreensaver.Dialog.borderWidth:        20
 xscreensaver.Dialog.shadowThickness:    2
 !timeout bar (background is actually determined by Dialog.text.background)
-xscreensaver.passwd.thermometer.foreground:  #006e85
+xscreensaver.passwd.thermometer.foreground:  #276b47
 xscreensaver.passwd.thermometer.background:  #191717
 xscreensaver.passwd.thermometer.width:       8
 !datestamp format--see the strftime(3) manual page for details
@@ -243,22 +251,22 @@ xscreensaver.dateFormat:    %I:%M%P %a %b %d, %Y
 
 !xcalc --
 
-xcalc*geometry:                        200x275
+xcalc*geometry:                        225x300
 xcalc.ti.bevel.background:             #191717
 xcalc.ti.bevel.screen.background:      #000000
 xcalc.ti.bevel.screen.DEG.background:  #000000
-xcalc.ti.bevel.screen.DEG.foreground:  #006e85
+xcalc.ti.bevel.screen.DEG.foreground:  #276b47
 xcalc.ti.bevel.screen.GRAD.background: #000000
-xcalc.ti.bevel.screen.GRAD.foreground: #006e85
+xcalc.ti.bevel.screen.GRAD.foreground: #276b47
 xcalc.ti.bevel.screen.RAD.background:  #000000
-xcalc.ti.bevel.screen.RAD.foreground:  #006e85
+xcalc.ti.bevel.screen.RAD.foreground:  #276b47
 xcalc.ti.bevel.screen.INV.background:  #000000
 xcalc.ti.bevel.screen.INV.foreground:  Red
 xcalc.ti.bevel.screen.LCD.background:  #000000
-xcalc.ti.bevel.screen.LCD.foreground:  #006e85
+xcalc.ti.bevel.screen.LCD.foreground:  #276b47
 xcalc.ti.bevel.screen.LCD.shadowWidth: 0
 xcalc.ti.bevel.screen.M.background:    #000000
-xcalc.ti.bevel.screen.M.foreground:    #006e85
+xcalc.ti.bevel.screen.M.foreground:    #276b47
 xcalc.ti.bevel.screen.P.background:    #000000
 xcalc.ti.bevel.screen.P.foreground:    Yellow
 xcalc.ti.Command.foreground:  #006e85

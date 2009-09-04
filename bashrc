@@ -1,299 +1,198 @@
-! --
-! file:     ~/.Xdefaults
-! author:   Mike reDD | http://m-redd.com
-! modified: Wed Sep  2 18:52:43 PDT 2009
-! vim:enc=utf-8:nu:ai:si:et:ts=4:sw=4:ft=xdefaults:
-! --
+#!/bin/bash
+# ~/.bashrc
+# http://0tue0.com
+# tueGroup
+# Smaller than Life Projects
+# By: MreDD     mredd (at) 0tue0.com
+##################
+#
+# Add bin to path
+##################
+#export PATH="$PATH:$HOME/bin"
 
-! Xcursor --
+# color
+#################
+# Color Codes
+####################
+# 0   = default colour     40  = black background       94  = light blue
+# 1   = bold               41  = red background         95  = light purple
+# 4   = underlined         42  = green background       96  = turquoise
+# 5   = flashing text      43  = orange background      100 = dark grey background
+# 7   = reverse field      44  = blue background        101 = light red background
+# 31  = red                45  = purple background      102 = light green background
+# 32  = green              46  = cyan background        103 = yellow background
+# 33  = orange             47  = grey background        104 = light blue background
+# 34  = blue               90  = dark grey              105 = light purple background
+# 35  = purple             91  = light red              106 = turquoise background
+# 36  = cyan               92  = light green
+# 37  = grey               93  = yellow
+####################
+ #local NONE="\[\033[0m\]"    # unsets color to term's fg color
+    
+# regular colors
+ K="\[\033[0;30m\]"    # black
+ R="\[\033[0;31m\]"    # red
+ G="\[\033[0;32m\]"    # green
+ Y="\[\033[0;33m\]"    # yellow
+ B="\[\033[0;34m\]"    # blue
+ M="\[\033[0;35m\]"    # magenta
+ C="\[\033[0;36m\]"    # cyan
+ W="\[\033[0;37m\]"    # white
+ O="\[\e[0;33m\]"    # orange
+ P="\[\e[0;35m\]"    # purple
+ LG="\[\e[0;37m\]"   # lightgray
+ DG="\[\e[0;90m\]"   # darkgray
+    
+# emphasized (bolded) colors
+EMK="\[\033[1;30m\]"  # black
+EMR="\[\033[1;31m\]"  # red
+EMG="\[\033[1;32m\]"  # green
+EMY="\[\033[1;33m\]"  # yellow
+EMB="\[\033[1;34m\]"  # blue
+EMM="\[\033[1;35m\]"  # magenta
+EMC="\[\033[1;36m\]"  # cyan
+EMW="\[\033[1;37m\]"  # white
+EMO="\[\e[1;43m\]"  # orange
+EMP="\[\e[1;105m\]"  # purple
 
- Xcursor*theme: Vanilla-DMZ-AA
- Xcursor.size:  22
+# background colors
+BGK="\[\033[40m\]"  # black
+BGR="\[\033[41m\]"  # red
+BGG="\[\033[42m\]"  # green
+BGY="\[\033[43m\]"  # yellow
+BGB="\[\033[44m\]"  # blue
+BGM="\[\033[45m\]"  # magenta
+BGC="\[\033[46m\]"  # cyan
+BGW="\[\033[47m\]"  # white
+BGW="\[\e[1;43m\]"  # orange
+BGW="\[\e[1;45m\]"  # purple
+BGGR="\[\e[0;90m\]"
+UC=$W                 # user's color
 
-! Xft settings --
+[ $UID -eq "0" ] && UC=$R   # root's color
 
-Xft.dpi:        96
-Xft.antialias:  true
-Xft.rgba:       rgb
-Xft.hinting:    full
-Xft.hintstyle:  hintslight
+# Dir_Colors
+##################
+if type -P dircolors >/dev/null ; then
+if [[ -f ~/.dir_colors ]] ; then
+eval $(dircolors -b ~/.dir_colors)
+elif [[ -f /etc/DIR_COLORS ]] ; then
+eval $(dircolors -b /etc/DIR_COLORS)
+fi
+fi
 
-! c64 settings --
+#
+set show-all-if-ambiguous on
 
-c64*font:                xft:Terminus:autohint=false:antialias=false:size=7
-c64*background:          #191717
-c64*foreground:          #006e85
+if [ "$TERM" = "Linux" ]; then
+  PROMPT_COMMAND='dirs | wmiir write /client/sel/label'
+fi
 
-! Terminal theme --
-! Main
-*background:    #191717
-*foreground:    #006e85
-! Black
-*color0:        #060101
-*color8:        #66825d
-! Red
-*color1:        #ffa07a
-*color9:        #e9967a
-! Green
-*color2:        #527b66
-*color10:       #4c5f46
-! Yellow
-*color3:        #ded838
-*color11:       #efef60
-! Blue
-*color4:        #6da3ae
-*color12:       #516f98
-! Magenta
-*color5:        #967395
-*color13:       #826ab1
-! Cyan
-*color6:        #69a2b0
-*color14:       #2d9bb7
-! White
-*color7:        #b3b3b3
-*color15:       #eeeeef
+if [ "$COLORTERM" == "rxvt" ]; then
+    export TERM=xterm-256color
+fi
 
+#
+##################
+# Fancy PWD display function
+##################
+# The home directory (HOME) is replaced with a ~
+# The last pwdmaxlen characters of the PWD are displayed
+# Leading partial directory names are striped off
+# /home/me/stuff          -> ~/stuff               if USER=me
+# /usr/share/big_dir_name -> ../share/big_dir_name if pwdmaxlen=20
+##################
+bash_prompt_command() {
+    # How many characters of the $PWD should be kept
+    local pwdmaxlen=25
+    # Indicate that there has been dir truncation
+    local trunc_symbol=".."
+    local dir=${PWD##*/}
+    pwdmaxlen=$(( ( pwdmaxlen < ${#dir} ) ? ${#dir} : pwdmaxlen ))
+    NEW_PWD=${PWD/#$HOME/\~}
+    local pwdoffset=$(( ${#NEW_PWD} - pwdmaxlen ))
+    if [ ${pwdoffset} -gt "0" ]
+    then
+        NEW_PWD=${NEW_PWD:$pwdoffset:$pwdmaxlen}
+        NEW_PWD=${trunc_symbol}/${NEW_PWD#*/}
+    fi
+}
 
-! rxvt-unicode --
+bash_prompt() {
+    case $TERM in
+     xterm*|rxvt*)
+         local TITLEBAR='\[\033]0;\u:${NEW_PWD}\007\]'
+          ;;
+     *)
+         local TITLEBAR=""
+          ;;
+    esac
+    
+}
 
-URxvt*termName:                   rxvt-256color
-! font preference
-URxvt*font:                       xft:Pragmata:pixelsize=13:antialias=true:hinting=true
-URxvt*boldFont:                   xft:Pragmata:pixelsize=14:antialias=true:bold:hinting=true
-URxvt*italicFont:                 xft:Terminus:size=13:antialias=true:hinting=true
-URxvt*bolditalicFont:             xft:Terminus:size=13:antialias=true:hinting=true
-URxvt.keysym.C-0:              command:\033]710;xft:Pragmata:pixelsize=13:autohint=true\007
-URxvt.keysym.C-minus:          command:\033]710;xft:Terminus:pixelsize=12:autohint=true\007
-URxvt.keysym.C-underscore:     command:\033]710;xft:Pragmata:pixelsize=17,xft:Bitstream Vera Sans Mono:autohint=true\007
-URxvt.keysym.C-equal:          command:\033]710;xft:Terminus:pixelsize=20,xft:Bitstream Vera Sans Mono:autohint=true\007
-URxvt.keysym.C-plus:           command:\033]710;xft:Pragmata:pixelsize=24,xft:Bitstream Vera Sans Mono:autohint=true\007
-!initial size
-URxvt*geometry:                   126x30
-!internal whitespace
-URxvt*borderless:                 true
-URxvt*internalBorder:     0
-!fade text n% upon unfocus
-!URxvt*fading:             20
-!darken=(0 to 100) lighten=(-1 to -100)
-URxvt*shading:            5
-!tint background with this color
-URxvt*tintColor:          #191717
-!set to 32-bit for real transparency (compositing required)
-URxvt*depth:             32
-!save n lines of scrollback buffer
-URxvt*saveLines:          32767
-!flash screen for attention
-URxvt*visualBell:         true
-!jump to bottom (prompt) on keypress
-URxvt*scrollTtyKeypress:  true
-!jump to bottom (prompt) when tty gets new lines
-URxvt*scrollWithBuffer:   false
-!jump to bottom (prompt) on tty output
-URxvt*scrollTtyOutput:    false
-!toggle scrollbar
-URxvt*scrollBar:                  false
-!scrollbar styles: rxvt, plain, next or xterm
-URxvt*scrollstyle:        plain
-!scrollbar alignment
-URxvt*scrollBar_right:    true
-URxvt*scrollColor:        #777777
-!transparency
-URxvt*transparent:        true
-!is this a login shell?
-URxvt*loginShell:         true
-!set the TERM environment variable
-!enable pseudo-transparency (requires depth: 24 (see above))
-!URxvt*inheritPixmap:      true
-!delimiters for double-click mouse selection
-URxvt*cutchars:           "()*,<>[]{}|'
-!screen dump settings
-URxvt*print-pipe:         cat > $(echo urxvt.dump.$(date +'%Y%M%d%H%m%S'))
-!secondary screen scroll (default enabled)
-URxvt*secondaryScroll:    true
-!de-iconify (map) on receipt of a bell character
-URxvt*mapAlert:           true
-!inhibit writing record into the system log file utmp
-URxvt*utmpInhibit:        true
-!! BEGIN urlLauncher settings !!
-URxvt*perl-lib:           /usr/lib/urxvt/perl/
-URxvt*perl-ext-common: default,matcher
-URxvt*urlLauncher:        urxvt-to-uzbl.sh
-!URxvt*urlLauncher:        conkeror
-!! END urlLauncher settings !!
-!tabs
-!URxvt*tabbed.hide              true
-!URxvt*tabbed.newButton         false
-URxvt*tabbar-fg:               64
-URxvt*tabbar-bg:               234
-URxvt*tab-fg:                  95
-URxvt*tab-bg:                  233
-URxvt*tabbed.secondaryScroll:  true
-URxvt.tabbed.urlLauncher:      urxvt-to-uzbl.sh
-!URxvt*urlLauncher:        conkeror
-URxvt*tabbed.matcher.button:   2
-URxvt*tabbed.perl-ext-common: default,matcher
-URxvt*keysym.C-Delete:    perl:matcher
-URxvt*matcher.button:     1
-URxvt*matcher.pattern.1:  \\bwww\\.[\\w-]+\\.[\\w./?&@#-]*[\\w/-]
-URxvt*matcher.pattern.2:  \\B(/\\S+?):(\\d+)(?=:|$)
-URxvt*matcher.launcher.2: gvim +$2 $1
+# Bash shell driver for 'go' (http://code.google.com/p/go-tool/).
+function go {
+    export GO_SHELL_SCRIPT=$HOME/.__tmp_go.sh
+    python -m go $*
+    if [ -f $GO_SHELL_SCRIPT ] ; then
+        source $GO_SHELL_SCRIPT
+    fi
+    unset GO_SHELL_SCRIPT
+}
 
-!transparent=0000 opaque=ffff
-URxvt*cursorColor:       #006e85
-URxvt*cursorColor2:      #000000
-URxvt*background:        #191717
-URxvt*foreground:        #276b47
-URxvt*colorBD:           #ffffff
-URxvt*colorIT:           #bbbbbb
-URxvt*colorUL:           #999999
-URxvt*underlineColor:    #006e85
+#screenwm
+#eval screen "exec screenwm init"
 
-! xterm --
+#
+PROMPT_COMMAND=bash_prompt_command
+bash_prompt
+unset bash_prompt
 
-xterm*geometry:           80x25
-xterm*faceName:           Terminus:size=12:antialias=true:hinting=true
-!xterm*font:             -*-dina-medium-r-*-*-16-*-*-*-*-*-*-*
-xterm*dynamicColors:      true
-xterm*utf8:               2
-xterm*eightBitInput:      true
-xterm*saveLines:          512
-xterm*scrollTtyKeypress:  true
-xterm*scrollTtyOutput:    false
-xterm*scrollBar:          false
-xterm*rightScrollBar:     true
-xterm*loginShell:         true
-xterm*jumpScroll:         true
-xterm*multiScroll:        true
-xterm*toolBar:            false
+#bash completion
+complete -cf sudo
+if [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+fi
 
-!aterm settings --    
+# Bash Aliases
+##################
+if [ -f ~/.bash_aliases ]; then
+ . ~/.bash_aliases
+fi
 
-aterm*background:		#191717
-aterm*foreground:		#006e85
-aterm*transparent:		true
-aterm*shading:			30
-aterm*cursorColor:		gray
-aterm*saveLines:		2000
-!aterm*tinting:			gray
-aterm*scrollBar:		false
-!aterm*scrollBar_right:	         true
-aterm*transpscrollbar:		true
-aterm*borderwidth:		0
-aterm*font:	-artwiz-snap-*-*-*-*-*-*-*-*-*-*-*-*
-aterm*geometry:			80x25
-!aterm*fading:			70  
+# grep color
+##################
+export GREP_COLOR="1;33"
+alias grep='grep --color=auto'
 
-! xpdf --
+# Dynamic resizing
+##################
+shopt -s checkwinsize
 
-xpdf*enableFreetype:    yes
-xpdf*antialias:         yes
-xpdf*foreground:        #006e85
-xpdf*background:        #191717
-xpdf*urlCommand:        /usr/bin/firefox %s
+#export LESS_TERMCAP_mb=$'\E[01;31m'
+#export LESS_TERMCAP_md=$'\E[01;31m'
+#export LESS_TERMCAP_me=$'\E[0m'
+#export LESS_TERMCAP_se=$'\E[0m'                           
+#export LESS_TERMCAP_so=$'\E[01;44;33m'                                 
+#export LESS_TERMCAP_ue=$'\E[0m'
+#export LESS_TERMCAP_us=$'\E[01;32m'
+#
 
-! lal clock --
+#
+alias ps='ps --forest'
+declare -x EDITOR=vim
 
-lal*font:       Arial
-lal*fontsize:   12
-lal*bold:       true
-lal*color:      #488dd2
-lal*width:      150
-lal*format:     %a %b %d %l:%M%P
+# WELCOME SCREEN
+####################
+clear
+echo "";
+#sysinfo
+uptime
+echo ""
+fortune
+echo "";
 
-! xclock --
+PS1="${LG}[${LG}\u${R}@${G}\h${LG}]──[${EMC}\$(tty | sed -e 's:/dev/::'):${O}\$(ls -1 | wc -l | sed 's: ::g') ${B}files${LG}:${R}\$(ls -lah | grep -m 1 total | sed 's/total //')b${LG}] \n ┌─[${EMM}\${NEW_PWD}${LG}] \n ${LG}└─${R}:${G}(${LG} "
 
- xclock*update:            1
- xclock*analog:            false
- xclock*Foreground:        #006e85
- xclock*background:        #191717
-
-! x11-ssh-askpass --
-
-x11-ssh-askpass*font:                   -*-dina-medium-r-*-*-12-*-*-*-*-*-*-*
-x11-ssh-askpass*background:             #191717
-x11-ssh-askpass*foreground:             #276b47
-x11-ssh-askpass.Button*background:      #000000
-x11-ssh-askpass.Indicator*foreground:   #ff9900
-x11-ssh-askpass.Indicator*background:   #FFFFFF
-x11-ssh-askpass*topShadowColor:         #006e85
-x11-ssh-askpass*bottomShadowColor:      #000000
-x11-ssh-askpass.*borderWidth:           1
-
-! xscreensaver --
-
-!font settings
-xscreensaver.Dialog.headingFont:        -*-dina-bold-r-*-*-12-*-*-*-*-*-*-*
-xscreensaver.Dialog.bodyFont:           -*-dina-medium-r-*-*-12-*-*-*-*-*-*-*
-xscreensaver.Dialog.labelFont:          -*-dina-medium-r-*-*-12-*-*-*-*-*-*-*
-xscreensaver.Dialog.unameFont:          -*-dina-medium-r-*-*-12-*-*-*-*-*-*-*
-xscreensaver.Dialog.buttonFont:         -*-dina-bold-r-*-*-12-*-*-*-*-*-*-*
-xscreensaver.Dialog.dateFont:           -*-dina-medium-r-*-*-12-*-*-*-*-*-*-*
-xscreensaver.passwd.passwdFont:         -*-dina-bold-r-*-*-12-*-*-*-*-*-*-*
-!general dialog box (affects main hostname, username, password text)
-xscreensaver.Dialog.foreground:         #006e85
-xscreensaver.Dialog.background:         #191717
-xscreensaver.Dialog.topShadowColor:     #434343
-xscreensaver.Dialog.bottomShadowColor:  #424242
-xscreensaver.Dialog.Button.foreground:  #276b47
-xscreensaver.Dialog.Button.background:  #191717
-!username/password input box and date text colour
-xscreensaver.Dialog.text.foreground:    #006e85
-xscreensaver.Dialog.text.background:    #191717
-xscreensaver.Dialog.internalBorderWidth:24
-xscreensaver.Dialog.borderWidth:        20
-xscreensaver.Dialog.shadowThickness:    2
-!timeout bar (background is actually determined by Dialog.text.background)
-xscreensaver.passwd.thermometer.foreground:  #276b47
-xscreensaver.passwd.thermometer.background:  #191717
-xscreensaver.passwd.thermometer.width:       8
-!datestamp format--see the strftime(3) manual page for details
-xscreensaver.dateFormat:    %I:%M%P %a %b %d, %Y
-
-!xcalc --
-
-xcalc*geometry:                        225x300
-xcalc.ti.bevel.background:             #191717
-xcalc.ti.bevel.screen.background:      #000000
-xcalc.ti.bevel.screen.DEG.background:  #000000
-xcalc.ti.bevel.screen.DEG.foreground:  #276b47
-xcalc.ti.bevel.screen.GRAD.background: #000000
-xcalc.ti.bevel.screen.GRAD.foreground: #276b47
-xcalc.ti.bevel.screen.RAD.background:  #000000
-xcalc.ti.bevel.screen.RAD.foreground:  #276b47
-xcalc.ti.bevel.screen.INV.background:  #000000
-xcalc.ti.bevel.screen.INV.foreground:  Red
-xcalc.ti.bevel.screen.LCD.background:  #000000
-xcalc.ti.bevel.screen.LCD.foreground:  #276b47
-xcalc.ti.bevel.screen.LCD.shadowWidth: 0
-xcalc.ti.bevel.screen.M.background:    #000000
-xcalc.ti.bevel.screen.M.foreground:    #276b47
-xcalc.ti.bevel.screen.P.background:    #000000
-xcalc.ti.bevel.screen.P.foreground:    Yellow
-xcalc.ti.Command.foreground:  #006e85
-xcalc.ti.Command.background:  #191717
-xcalc.ti.button5.background:  #000000
-xcalc.ti.button19.background: #191717
-xcalc.ti.button18.background: #191717
-xcalc.ti.button20.background: #191717
-!uncomment to change label on division button
-!xcalc.ti.button20.label:      /
-xcalc.ti.button25.background: #191717
-xcalc.ti.button30.background: #191717
-xcalc.ti.button35.background: #191717
-xcalc.ti.button40.background: #191717
-xcalc.ti.button22.background: #191717
-xcalc.ti.button23.background: #191717
-xcalc.ti.button24.background: #191717
-xcalc.ti.button27.background: #191717
-xcalc.ti.button28.background: #191717
-xcalc.ti.button29.background: #191717
-xcalc.ti.button32.background: #191717
-xcalc.ti.button33.background: #191717
-xcalc.ti.button34.background: #191717
-xcalc.ti.button37.background: #191717
-xcalc.ti.button38.background: #191717
-xcalc.ti.button39.background: #191717
-XCalc*Cursor:                 hand2
-XCalc*ShapeStyle:             rectangle
-
-! End
+#EOF
+##################
