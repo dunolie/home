@@ -26,33 +26,59 @@ c64*foreground:          #006e85
 
 ! Terminal theme --
 ! Main
-*background:    #191717
-*foreground:    #006e85
+!*background:    #1A1A1A
+!*foreground:    #006e85
 ! Black
-*color0:        #060101
-*color8:        #66825d
+!*color0:        #060101
+!*color8:        #66825d
 ! Red
-*color1:        #ffa07a
-*color9:        #e9967a
+!*color1:        #ffa07a
+!*color9:        #e9967a
 ! Green
-*color2:        #527b66
-*color10:       #4c5f46
+!*color2:        #527b66
+!*color10:       #4c5f46
 ! Yellow
-*color3:        #ded838
-*color11:       #efef60
+!*color3:        #ded838
+!*color11:       #efef60
 ! Blue
-*color4:        #6da3ae
-*color12:       #4e80c4
+!*color4:        #6da3ae
+!*color12:       #4e80c4
 ! Magenta
-*color5:        #967395
-*color13:       #826ab1
+!*color5:        #967395
+!*color13:       #826ab1
 ! Cyan
-*color6:        #69a2b0
-*color14:       #2d9bb7
+!*color6:        #69a2b0
+!*color14:       #2d9bb7
+! White
+!*color7:        #b3b3b3
+!*color15:       #eeeeef
+! Main
+*background:    #262626
+*foreground:    #686868
+! Black
+*color0:        #0a0a0a
+*color8:        #0a0a0a
+! Red
+*color1:        #f92672
+*color9:        #f92672
+! Green
+*color2:        #19ba68
+*color10:       #19ba68
+ Yellow
+*color3:        #f3e675
+*color11:       #f3e675
+! Blue
+*color4:        #5492ef
+*color12:       #5492ef
+! Magenta
+*color5:        #9e6ffe
+*color13:       #9E6FFE
+! Cyan
+*color6:        #5E7175
+*color14:       #A3BABF
 ! White
 *color7:        #b3b3b3
 *color15:       #eeeeef
-
 
 ! rxvt-unicode --
 
@@ -141,12 +167,12 @@ URxvt*matcher.launcher.2: gvim +$2 $1
 !transparent=0000 opaque=ffff
 URxvt*cursorColor:       #006e85
 URxvt*cursorColor2:      #000000
-URxvt*background:        #191717
-URxvt*foreground:        #276b47
-URxvt*colorBD:           #ffffff
-URxvt*colorIT:           #bbbbbb
-URxvt*colorUL:           #999999
-URxvt*underlineColor:    #006e85
+!URxvt*background:        #191717
+!URxvt*foreground:        #276b47
+!URxvt*colorBD:           #ffffff
+!URxvt*colorIT:           #bbbbbb
+!URxvt*colorUL:           #999999
+!URxvt*underlineColor:    #006e85
 
 ! xterm --
 
