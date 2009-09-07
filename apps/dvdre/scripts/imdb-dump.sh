@@ -1,6 +1,6 @@
 #!/bin/sh
 # IMDB Dump Script.
-VER="0.4.3"
+VER="0.4.4"
 # http://script.m-redd.com
 # Smaller than Life Projects
 # By: MreDD
@@ -130,10 +130,22 @@ cat $DVDRE/$TTCODE.txt | grep -A2 'Genre:' | tail -1 | cut -f 2 -d "]" | cut -f 
 cat $DVDRE/$TTCODE.txt | grep -A2 'Awards:' | tail -1 | cut -f 1 -d "[" | cut -c3-700 | awk -F\| '{print "Awards:"$1}'
 cat $DVDRE/$TTCODE.txt | grep -A2 'Company:' | tail -1 | cut -f 2 -d "]" | cut -f 1 -d "[" | awk -F\| '{print "Company:",$1}'
 cat $DVDRE/$TTCODE.txt | grep -A2 'Plot:' | tail -1 | cut -f 1 -d "[" | cut -c3-700 | awk -F\| '{print "Plot:"$1}'
-#<font color="">#</font> <font color="red">Cast dump clean now. so it seems</font>
-echo "Cast:";cat $DVDRE/$TTCODE.txt | grep -A16 Cast | tail -15 | sed 's/\[[^]\]*]//g'
-echo ""
+#<font color="">#</font> <font color="red">Cast Dump is clean and I'm now working on a dump of the complete cast lineup</font>i
+# Start Search for More
+MORESTART=$(cat $DVDRE/$TTCODE.txt | grep -A16 Cast | sed 's/\[[^]\]*]//g' | grep -A21 "(Cast overview" | grep -n "more" | awk '{print $1}' | tr -d ":")
+if [ "$MORESTART" != "" ];then
+      MOREEND=$(cat $DVDRE/$TTCODE.txt | grep -A16 Cast | sed 's/\[[^]\]*]//g' | tail -${MORESTART} | grep -n "more" | awk '{print $1}' | tr -d ":")
+# End search for More
+      MOREEND=$(cat $DVDRE/$TTCODE.txt | grep -A16 Cast | sed 's/\[[^]\]*]//g' | tail -${MORESTART} | grep -n "more" | awk '{print $1}' | tr -d ":")
+#
+     ENDMORE=$(expr $MOREEND - 2)
+     echo "Cast:";cat $DVDRE/$TTCODE.txt | grep -A16 Cast | tail -${MORESTART} | sed 's/\[[^]\]*]//g' | head -${ENDMORE}
+     echo ""
+else
+echo "Cast:";cat $DVDRE/$TTCODE.txt | grep -A16 Cast | tail | sed 's/\[[^]\]*]//g' | tail -15
+     echo ""
 
+fi
 fi
 
 exit 0
