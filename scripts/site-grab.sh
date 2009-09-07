@@ -5,7 +5,18 @@
 # By: MreDD
 # projects - at - 0tue0 (dot) com
 #################################
-WGET="/usr/bin/wget"
+# Check WGet
+if [[ -z $( type -p wget ) ]]; then 
+      echo -e "wget -- NOT INSTALLED !";exit
+fi
+WHEREISWGET=$(whereis wget | awk '{print $2}')
+WGET="$WHEREISWGET"
+LSGETDIR=$(ls $HOME/dev/wget | grep "sites")
+if [ "$LSGETDIR" != "sites" ];then
+     mkdir -p "$HOME/dev/wget/sites"
+     echo " Grabbing Site ..." 
+else 
+     echo " Grabbing Site ..."
 SAVE="$HOME/dev/wget/sites"
 cd $SAVE
 WEBURL=$1
@@ -15,3 +26,5 @@ else
     unset response
 $WGET --random-wait -r -p -e robots=off -U mozilla $1
 fi
+fi
+
