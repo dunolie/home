@@ -5,10 +5,6 @@
 # Smaller than Life Projects
 # By: MreDD     mredd (at) 0tue0.com
 ##################
-#
-# Add bin to path
-##################
-#export PATH="$PATH:$HOME/bin"
 
 # color
 #################
@@ -179,7 +175,8 @@ shopt -s checkwinsize
 #
 
 #
-alias ps='ps --forest'
+EDITOR="vim"
+BROWSER="elinks"
 declare -x EDITOR=vim
 
 # WELCOME SCREEN
