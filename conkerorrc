@@ -123,7 +123,7 @@ define_webjump("archwiki", "http://wiki.archlinux.org/index.php?title=Special%3A
 define_webjump("archforum", "http://bbs.archlinux.org/index.php?title=Special%3ASearch&ns0=1&search=%s&fulltext=Advanced+search");
 
 // Personal
-define_webjump("galleryadmin", "https://shots.m-redd.com/zp-core");
+define_webjump("galleryadmin", "https://shots.m-redd.com/****");
 define_webjump("mygithub", "http://github.com/MreDD");
 
 // Facebook
@@ -135,7 +135,7 @@ define_webjump("demonoid", "http://www.demonoid.com/");
 define_webjump("piratebay", "https://www.piratebay.org/");
 define_webjump("isohunt", "https://www.isohunt.com/");
 define_webjump("torrentbox", "https://TorrentBox.com/");
-define_webjump("valdis", "valdis:9090/sabnzbd");
+define_webjump("valdis", "*****");
 
 // IMDB - Rotten Tomatoes
 define_webjump("imdb", "http://imdb.com/find?q=%s");
@@ -149,7 +149,7 @@ define_webjump("youtube-user", "http://youtube.com/profile_videos?user=%s");
 define_webjump("hulu", "http://www.hulu.com/search?query=%s");
 
 // Last FM - Pandora
-lastfm_user = "M_reDD";
+lastfm_user = "******";
 define_webjump("lastfm", "http://www.last.fm/user/" + lastfm_user);
 define_webjump("lastfm-music", "http://www.last.fm/search?m=all&q=%s");
 define_webjump("lastfm-event", "http://www.last.fm/events/search?search=1&q=%s");
@@ -318,7 +318,6 @@ url_remoting_fn = load_url_in_new_buffer_perhaps_bg;
 homepage = "http://m-redd.com";
 
 // Style Sheets
-
 // FaceBook
 register_user_stylesheet('file:////home/mredd/.conkeror.mozdev.org/styles/Face_Dark_Grey.css');
 register_user_stylesheet('file:////home/mredd/.conkeror.mozdev.org/styles/noadds_facebook.css');
