@@ -1,0 +1,157 @@
+/*  Zathman's The Pirate Bay - Cleansed and Darkened ver 1.0  */
+/* Last Updated: 31 AUG 2007 (03:20) Email: zathman@gmail.com */
+/* * If you like this, please consider donating via PayPal® * */
+/* *At the very least, leave me a comment with your thoughts* */
+
+@namespace url(http://www.w3.org/1999/xhtml);
+@-moz-document domain("thepiratebay.org") {
+  /** Cleanup 30.08.2007.0230 **/
+    .ad, .ads, #tp_frame1, *[width*="468"][height*="60"], 
+    iframe, .spons-link, a[href*="adclick"] { 
+        display: none !important; }
+    img[src*="limited_"] {
+        display: none !important; }
+  /** Style 31.08.2007.0154 **/
+    /** Text & Links 30.08.2007.0230 **/
+      a {
+          border: 0 !important;
+          color: #488fcd !important; }
+      .download a, #showall a, #latest a, #upload a { 
+          color: #008E00 !important; }
+      a:hover, #showall a:hover, #latest a:hover, #upload a:hover { 
+          text-decoration: none !important; 
+          color: #ffffff !important;}
+      table#searchResult td.vertTh a {
+          color: #FF6600 !important;
+          font-weight: normal !important; }
+
+    /** Forms 30.08.2007.0230 **/
+      input[type="text"], select {
+          border: 0px !important;
+          background-color: #cccccc !important; }
+      input.inputbox {
+          margin-left: 4px !important;}
+      td[align="center"][colspan="2"] { float: left !important; width: 600px !important;}
+    /** Page 31.08.2007.0257 **/
+      body { 
+          background: #222222 url(http://files.zathland.net/i/static/tpb/bg-blacktop.gif) repeat-x !important; 
+          color: #ffffff !important; 
+          margin-left: 0px !important;
+          margin-right: 0px !important;}
+      h1 a {
+          background: url(http://files.zathland.net/i/static/tpb/tpb-multi-logo.jpg) no-repeat !important; }
+      img[src*="tpblogo_sm"] {
+          width: 0 !important; height: 0 !important;
+          padding-left: 72px !important; padding-top: 87px !important;
+          background-image: url(http://files.zathland.net/i/static/tpb/blackpirate.gif) !important;}
+      h2 { 
+          border: 0 !important;
+          height: 15px !important;
+          background: #488FCD url(http://files.zathland.net/i/static/tpb/menugrad.jpg) repeat-x !important; }
+      td h2, h2 span {
+          color: #000000 !important;
+          font-size: 11px !important; 
+          line-height: 10px !important;}
+      table#searchResult { 
+          border: 2px #555555 solid !important;
+          background-color: #333333 !important;}
+      thead#tableHead th, table#searchResult tr, 
+      table#searchResult th, table#searchResult td {
+          background: transparent !important; 
+          border: 0 !important;}
+      table#searchResult tr:hover {
+          background-color: #000000 !important; }
+
+      /** Details Page 30.08.2007.0230 **/
+        #detailsouterframe {
+            background-color: #333333 !important;
+            border: 1px #555555 solid !important;}
+        #detailsframe, #title, #details {
+            background: transparent !important;
+            border: 0 !important;}
+        .nfo {
+            width: 620px !important; }
+        .nfo, .comment {
+            background-color: #222222 !important; }
+        .comment {
+            padding: 3px !important; }
+        #details .col1 {
+            width: 260px !important; }
+        #details dl.col2 {
+            width: 307px !important; }
+        #details dd, #details dt {
+            border-bottom: 0 !important;}
+        #details dl.col2 dd {
+            padding-top: 1px !important; }   
+        .rating { 
+            background: url(http://files.zathland.net/i/static/tpb/blue0star.gif) !important; }
+        .r1 .one, .r2 .two, .r3 .three, .r4 .four, .r5 .five { 
+            background: url(http://files.zathland.net/i/static/tpb/blue5star.gif) no-repeat !important; }
+        .r2 .two { 
+            width: 22px !important; }
+        .r3 .three { 
+            width: 33px !important; }
+        .r4 .four { 
+            width: 44px !important; }
+        .r5 .five { 
+            width: 55px !important; }
+
+        /** Posting Comments 30.08.2007.0230 **/
+          #CommentDiv {
+              border: 1px #555555 solid !important;
+              background-color: #222222 !important; }
+          textarea#add_comment { 
+              border: 1px #444444 solid !important;
+              width: 400px !important; 
+              background-color: #000000 !important; 
+              color: #ffffff !important;}
+
+        /** Files Listings 31.08.2007.0154 **/
+          #filelistContainer {
+              border: 1px #555555 solid !important;
+              background-color: #222222 !important; }
+
+      /** Help Page 30.08.2007.0230 **/
+        .highlight {
+            background: transparent !important;
+            color: #ffa50b !important; }
+        div h2 {
+            color: #000000 !important;
+            font-size: 11px !important; 
+            line-height: 10px !important;
+            font-weight: bold !important}
+
+      /** Blog Pages 30.08.2007.0230 **/
+        #blog #comments dd {
+            background-color: #333333 !important; }
+        #blog #comments dt {
+            background-color: #222222 !important; }
+
+      /** Contact Page 30.08.2007.0230 **/
+        #irc {
+            color: #ffffff !important; 
+            background-color: #333333 !important; 
+            border: 1px #555555 solid !important; }
+        textarea#msg {
+            color: #ffffff !important;
+            border: 1px #444444 solid !important;
+            background-color: #000000 !important; }
+
+}
+@-moz-document domain("rss.thepiratebay.org") {
+      /** RSS Feed Page 31.08.2007.0320 **/
+        html {
+            background-color: #222222 !important; }
+        #feedBody {
+            color: #ffffff !important; 
+            background-color: #333333 !important; 
+            border: 1px #555555 solid !important; }
+        #feedTitleText {
+            border-bottom-color: threeddarkshadow !important; }
+        #feedSubtitleText {
+            background: transparent !important; }
+        div.entry a {
+            text-decoration: none !important; }
+        #feedHeaderContainer, #feedHeader { 
+            background-color: threeddarkshadow !important; }
+}

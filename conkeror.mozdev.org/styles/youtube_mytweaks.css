@@ -1,0 +1,6 @@
+@namespace url(http://www.w3.org/1999/xhtml);
+
+@-moz-document domain(youtube.com) { 
+#homepage-side-content, #PRO-titlebar, .feedmodule-promoted.feedmodule-upper-border, #watch-tab-share, #watch-tab-share-body, #watch-channel-brand-div, #watch-active-sharing, #watch-buy-urls, .chrome-link, #ytlive-promo-ugc
+ { display: none !important; } /* No sharing MySpace etc */
+.watch-discoverbox, #more_channel_videos { height: 609px !important; } } /* More related videos */

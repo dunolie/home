@@ -1,0 +1,10 @@
+@namespace url(http://www.w3.org/1999/xhtml);
+
+@-moz-document url-prefix(http://www.facebook.com/) {
+/* For the profile tabs: */
+ul#profile_tabs.tabs *{
+-moz-border-radius: 10px 10px 0px 0px !important;
+-webkit-border-radius: 10px 10px 0px 0px !important;
+}
+}
+

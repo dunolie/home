@@ -1,0 +1,36 @@
+/*
+ ________________________________________________________________________
+|                  |                                                     |
+|          Title:  |  Last.FM - Transparent Navigation Menus             |
+|    Description:  |  Last fm, even more awesome! transparent = Seethru  |
+|         Author:  |  -=Ben=-                                            |
+|   Date Created:  |  November 10, 2008                                  |
+|   Last Updated:  |  November 26, 2008                                  |
+|        Version:  |  1.0.0.1                                            |
+|__________________|_____________________________________________________|
+
+*/
+
+
+@namespace url(http://www.w3.org/1999/xhtml);
+
+
+@-moz-document domain(last.fm) 
+{
+
+/* Normal Menu - When Clicked: */
+#idBadgerDropDown,
+UL.lfmDropDownBody
+{
+  opacity: .75 !important;
+}
+
+
+/* Hovered Menu - When Moused Over: */
+#idBadgerDropDown:hover,
+UL.lfmDropDownBody:hover
+{
+  opacity: .92 !important;
+}
+
+}
