@@ -16,12 +16,12 @@ td.tcl, td.tcr, #idx1>.box, #idx2>.box, #idx3>.box, #idx4>.box,
 #users1.blocktable>.box,.block2col >.blockmenu >.box, .rowodd, .roweven,
 #postpreview.blockpost>.box, #punredirect.pun>.block>.box>.inbox,
 #punredirect.pun>.block>.box, #helpfile>.box{
-background-color: #222222 !important;
-border-color: #111111 !important}
+background-color: #0a0a0a !important;
+border-color: #686868 !important}
 
 th.tcl, th.tcr, .tc2, .tc3, blockquote, .codebox, .infldset>dl>dd{
-background-color: #333333 !important;
-border-color: #111111 !important}
+background-color: #191717 !important;
+border-color: #686868 !important}
 
 .tcl, .tc3, .tc2, .tcr, dd, dd>a:hover, .tcr>a:hover, h3>a:hover,
 .conr>li>a:hover, .conl>li, .linkst>.inbox>ul>li>a:hover, .pagelink>a:hover,
