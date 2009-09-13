@@ -3,8 +3,8 @@
 @-moz-document url-prefix(http://www.facebook.com/) {
 /* For the profile tabs: */
 ul#profile_tabs.tabs *{
--moz-border-radius: 10px 10px 0px 0px !important;
--webkit-border-radius: 10px 10px 0px 0px !important;
+-moz-border-radius: 9px 9px 0px 0px !important;
+-webkit-border-radius: 9px 9px 0px 0px !important;
 }
 }
 

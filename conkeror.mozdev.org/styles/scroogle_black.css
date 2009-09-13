@@ -4,16 +4,16 @@
  /* Global Style */ 
  :not(html):not(body)[bgcolor]
   {
-    background-color: #222 !important;
+    background-color: #0a0a0a !important;
   }
  [bordercolor]
   {
-    border-color: #555 !important;
+    border-color: #006e85 !important;
   }
   html, body
   {
-    background-color: #000 !important; 
-    color: #bbb !important;
+    background-color: #0a0a0a !important; 
+    color: #686868 !important;
     font-family: Arial, sans-serif !important;
     font-size: 10pt !important;
     margin: 0 !important;
