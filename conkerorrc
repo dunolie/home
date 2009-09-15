@@ -123,7 +123,7 @@ define_webjump("archwiki", "http://wiki.archlinux.org/index.php?title=Special%3A
 define_webjump("archforum", "http://bbs.archlinux.org/index.php?title=Special%3ASearch&ns0=1&search=%s&fulltext=Advanced+search");
 
 // Personal
-define_webjump("galleryadmin", "https://shots.m-redd.com/****");
+define_webjump("galleryadmin", "https://shots.m-redd.com/*****");
 define_webjump("mygithub", "http://github.com/MreDD");
 
 // Facebook
@@ -131,11 +131,15 @@ define_webjump("facebook", "http://www.facebook.com/home.php");
 
 // Newzbin - Torrent
 define_webjump("newz", "https://www.newzbin.com/");
+define_webjump("binsearch", "https://www.Binsearch.info");
+define_webjump("tvnzb", "http://www.TVNZB.com");
+define_webjump("nzbmatrix", "http://www.Nzbmatrix.com");i
+define_webjump("nzbmovie", "http://www.nzbmovieseeker.com");
 define_webjump("demonoid", "http://www.demonoid.com/");
 define_webjump("piratebay", "https://www.piratebay.org/");
 define_webjump("isohunt", "https://www.isohunt.com/");
 define_webjump("torrentbox", "https://TorrentBox.com/");
-define_webjump("valdis", "*****");
+define_webjump("valdis", "*******");
 
 // IMDB - Rotten Tomatoes
 define_webjump("imdb", "http://imdb.com/find?q=%s");
@@ -149,7 +153,7 @@ define_webjump("youtube-user", "http://youtube.com/profile_videos?user=%s");
 define_webjump("hulu", "http://www.hulu.com/search?query=%s");
 
 // Last FM - Pandora
-lastfm_user = "******";
+lastfm_user = "*****";
 define_webjump("lastfm", "http://www.last.fm/user/" + lastfm_user);
 define_webjump("lastfm-music", "http://www.last.fm/search?m=all&q=%s");
 define_webjump("lastfm-event", "http://www.last.fm/events/search?search=1&q=%s");
@@ -330,12 +334,21 @@ register_user_stylesheet('file:////home/mredd/.conkeror.mozdev.org/styles/pirate
 // CraigsList
 register_user_stylesheet('file:////home/mredd/.conkeror.mozdev.org/styles/craigslist_cleanup.css');
 // Google - YouTube
-register_user_stylesheet('file:////home/mredd/.conkeror.mozdev.org/styles/crome_google.css');
+//register_user_stylesheet('file:////home/mredd/.conkeror.mozdev.org/styles/crome_google.css');
 register_user_stylesheet('file:////home/mredd/.conkeror.mozdev.org/styles/dark_google_search.css');
-register_user_stylesheet('file:////home/mredd/.conkeror.mozdev.org/styles/youtube_mytweaks.css');
 register_user_stylesheet('file:////home/mredd/.conkeror.mozdev.org/styles/scroogle_black.css');
+//register_user_stylesheet('file:////home/mredd/.conkeror.mozdev.org/styles/youtube_dark_contrast.css');
+//register_user_stylesheet('file:////home/mredd/.conkeror.mozdev.org/styles/youtube_dark_clean.css');
+//register_user_stylesheet('file:////home/mredd/.conkeror.mozdev.org/styles/dark_tube.css');
+register_user_stylesheet('file:////home/mredd/.conkeror.mozdev.org/styles/dark_minimal_youtube.css');
+register_user_stylesheet('file:////home/mredd/.conkeror.mozdev.org/styles/youtube_mytweaks.css');
+// Hulu
+register_user_stylesheet('file:////home/mredd/.conkeror.mozdev.org/styles/hulu_dark.css');
+register_user_stylesheet('file:////home/mredd/.conkeror.mozdev.org/styles/lr_hulu.css');
+register_user_stylesheet('file:////home/mredd/.conkeror.mozdev.org/styles/lightsout_hulu.css');
 // Gmail
 register_user_stylesheet('file:////home/mredd/.conkeror.mozdev.org/styles/gmail_remove_adds.css');
+register_user_stylesheet('file:////home/mredd/.conkeror.mozdev.org/styles/hide_gmail.css');
 // IMDB
 register_user_stylesheet('file:////home/mredd/.conkeror.mozdev.org/styles/imdb_dark.css');
 // LastFM
