@@ -1,11 +1,13 @@
 #!/bin/bash
 # Site Grab
-VER="0.1"
+VER="0.2"
 # http://script.m-redd.com
 # Smaller than Life Projects
 # By: MreDD
 # projects - at - 0tue0 (dot) com
 #################################
+# Save Directory
+SAVE="$HOME/apps/wget/sites"
 # Version
 echo ""
 echo "Site Grab V. $VER"
@@ -18,13 +20,13 @@ fi
 WHEREISWGET=$(whereis wget | awk '{print $2}')
 WGET="$WHEREISWGET"
 # Check for Site Grab's Working Directory
-LSGETDIR=$(ls $HOME/dev/wget | grep "sites")
+LSGETDIR=$(ls $HOME/apps/wget | grep "sites")
 if [ "$LSGETDIR" != "sites" ];then
-     mkdir -p "$HOME/dev/wget/sites"
-     echo " Grabbing Site ..." 
+     mkdir -p "$HOME/apps/wget/sites"
+     echo " First Run - Directories Created." 
+     echo "   Please Run Aagin Now. "
 else 
      echo " Grabbing Site ..."
-SAVE="$HOME/dev/wget/sites"
 cd $SAVE
 WEBURL=$1
 if [ -z "$WEBURL" ];then
