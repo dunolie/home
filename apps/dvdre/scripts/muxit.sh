@@ -1,6 +1,6 @@
 #!/bin/bash
 # MuxIt
-VER="0.2"
+VER="0.3"
 # a tool for <a href="http://script.m-redd.com/dvdre.htm">DvDre x264 to MKV|MP4</a>
 # http://script.m-redd.com
 # Smaller than Life Projects
@@ -166,7 +166,14 @@ echo "------------------"
 ### Audio Start
 ################
 cd $AUDIODIR
-ls *.a* > $AUDIODIR/audiofiles.txt
+LISTAUDIO=$(ls | grep "*.a*")
+if [ "$LISTAUDIO" == "*.ac3" ];then
+    LISTAUDIO=$(ls *.ac3 >> $AUDIODIR/audiofiles.txt)
+elif [ "$LISTAUDIO" == "*.aac" ];then
+    LISTAUDIO=$(ls *.aac >> $AUDIODIR/audiofiles.txt)
+elif [ "$LISTAUDIO" != "*.a*" ];then
+    LISTAUDIO=$(ls *.dts >> $AUDIODIR/audiofiles.txt)
+fi 
 AUDFILZ="$(cat -n $AUDIODIR/audiofiles.txt | tail -1 | awk '{print $1}')"
 AUDFILES="$(cat -n $AUDIODIR/audiofiles.txt)"
 echo " - Audio File(s) - "
@@ -496,7 +503,14 @@ echo "------------------"
 ### Audio Start
 ################
 cd $AUDIODIR
-ls *.a* > $AUDIODIR/audiofiles.txt
+LISTAUDIO=$(ls | grep "*.a*")
+if [ "$LISTAUDIO" == "*.ac3" ];then
+    LISTAUDIO=$(ls *.ac3 >> $AUDIODIR/audiofiles.txt)
+elif [ "$LISTAUDIO" == "*.aac" ];then
+    LISTAUDIO=$(ls *.aac >> $AUDIODIR/audiofiles.txt)
+elif [ "$LISTAUDIO" != "*.a*" ];then
+    LISTAUDIO=$(ls *.dts >> $AUDIODIR/audiofiles.txt)
+fi 
 AUDFILZ="$(cat -n $AUDIODIR/audiofiles.txt | tail -1 | awk '{print $1}')"
 AUDFILES="$(cat -n $AUDIODIR/audiofiles.txt)"
 echo " - Audio File(s) - "
