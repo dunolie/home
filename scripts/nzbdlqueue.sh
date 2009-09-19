@@ -6,7 +6,6 @@
 QUEUE="$HOME/dls/nzb/nzbget/queue/"
 # Jump to Queue
 cd $QUEUE
-ls *.nzb
 for i in *.nzb; do
   if [ -e "$i" ]; then
     file=`basename "$i" .nzb`
