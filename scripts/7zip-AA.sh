@@ -4,7 +4,7 @@
 #   Archieve Using 7zip
 #     Password Optional
 #
-# http://0tue0.com
+# http://script.m-redd.com
 # tueGroup
 # Smaller than Life Projects
 # By: MreDD
