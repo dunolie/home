@@ -1,5 +1,44 @@
 // Home Page
 homepage = "http://m-redd.com";
+// Style Sheets
+// FaceBook
+register_user_stylesheet('file:///home/mredd/.conkeror.mozdev.org/styles/Face_Dark_Grey.css');
+register_user_stylesheet('file:///home/mredd/.conkeror.mozdev.org/styles/noadds_facebook.css');
+//register_user_stylesheet('file:///home/mredd/.conkeror.mozdev.org/styles/facebook_round_tabs_3.css');
+// Demonoid - PirateBay
+register_user_stylesheet('file:///home/mredd/.conkeror.mozdev.org/styles/demonoid_blue_theme.css');
+register_user_stylesheet('file:///home/mredd/.conkeror.mozdev.org/styles/demonoid_site_cleanup.css');
+register_user_stylesheet('file:///home/mredd/.conkeror.mozdev.org/styles/piratebay_addblock.css');
+register_user_stylesheet('file:///home/mredd/.conkeror.mozdev.org/styles/piratebay_clean_dark.css');
+// CraigsList
+register_user_stylesheet('file:///home/mredd/.conkeror.mozdev.org/styles/craigslist_cleanup.css');
+// Google - YouTube
+//register_user_stylesheet('file:///home/mredd/.conkeror.mozdev.org/styles/crome_google.css');
+register_user_stylesheet('file:///home/mredd/.conkeror.mozdev.org/styles/dark_google_search.css');
+register_user_stylesheet('file:///home/mredd/.conkeror.mozdev.org/styles/scroogle_black.css');
+//register_user_stylesheet('file:///home/mredd/.conkeror.mozdev.org/styles/youtube_dark_contrast.css');
+//register_user_stylesheet('file:///home/mredd/.conkeror.mozdev.org/styles/youtube_dark_clean.css');
+//register_user_stylesheet('file:///home/mredd/.conkeror.mozdev.org/styles/dark_tube.css');
+register_user_stylesheet('file:///home/mredd/.conkeror.mozdev.org/styles/dark_minimal_youtube.css');
+register_user_stylesheet('file:///home/mredd/.conkeror.mozdev.org/styles/youtube_mytweaks.css');
+// Hulu
+register_user_stylesheet('file:///home/mredd/.conkeror.mozdev.org/styles/hulu_dark.css');
+register_user_stylesheet('file:///home/mredd/.conkeror.mozdev.org/styles/lr_hulu.css');
+register_user_stylesheet('file:///home/mredd/.conkeror.mozdev.org/styles/lightsout_hulu.css');
+// Gmail
+register_user_stylesheet('file:///home/mredd/.conkeror.mozdev.org/styles/gmail_remove_adds.css');
+register_user_stylesheet('file:///home/mredd/.conkeror.mozdev.org/styles/hide_gmail.css');
+// IMDB
+register_user_stylesheet('file:///home/mredd/.conkeror.mozdev.org/styles/imdb_dark.css');
+// LastFM
+register_user_stylesheet('file:///home/mredd/.conkeror.mozdev.org/styles/paint-it-black-lastfm-v2.css');
+register_user_stylesheet('file:///home/mredd/.conkeror.mozdev.org/styles/lastfm_tranmenu.css');
+register_user_stylesheet('file:///home/mredd/.conkeror.mozdev.org/styles/lastfm_noadds.css');
+// Forums
+register_user_stylesheet('file:///home/mredd/.conkeror.mozdev.org/styles/dark_forum.css');
+// Misc
+register_user_stylesheet('file:///home/mredd/.conkeror.mozdev.org/styles/well_rounded.css');
+register_user_stylesheet('file:///home/mredd/.conkeror.mozdev.org/styles/tabbar_mouse.css');
 // Keybindings
 var maps = Array(
     // Vimperator-like
@@ -309,42 +348,4 @@ for (var i = 0; i < gs_maps.length; i += 1)
 
 require('eye-guide.js');
 require('wikipedia-didyoumean.js');
-// Style Sheets
-// FaceBook
-register_user_stylesheet('file:////home/mredd/.conkeror.mozdev.org/styles/Face_Dark_Grey.css');
-register_user_stylesheet('file:////home/mredd/.conkeror.mozdev.org/styles/noadds_facebook.css');
-//register_user_stylesheet('file:////home/mredd/.conkeror.mozdev.org/styles/facebook_round_tabs_3.css');
-// Demonoid - PirateBay
-register_user_stylesheet('file:////home/mredd/.conkeror.mozdev.org/styles/demonoid_blue_theme.css');
-register_user_stylesheet('file:////home/mredd/.conkeror.mozdev.org/styles/demonoid_site_cleanup.css');
-register_user_stylesheet('file:////home/mredd/.conkeror.mozdev.org/styles/piratebay_addblock.css');
-register_user_stylesheet('file:////home/mredd/.conkeror.mozdev.org/styles/piratebay_clean_dark.css');
-// CraigsList
-register_user_stylesheet('file:////home/mredd/.conkeror.mozdev.org/styles/craigslist_cleanup.css');
-// Google - YouTube
-//register_user_stylesheet('file:////home/mredd/.conkeror.mozdev.org/styles/crome_google.css');
-register_user_stylesheet('file:////home/mredd/.conkeror.mozdev.org/styles/dark_google_search.css');
-register_user_stylesheet('file:////home/mredd/.conkeror.mozdev.org/styles/scroogle_black.css');
-//register_user_stylesheet('file:////home/mredd/.conkeror.mozdev.org/styles/youtube_dark_contrast.css');
-//register_user_stylesheet('file:////home/mredd/.conkeror.mozdev.org/styles/youtube_dark_clean.css');
-//register_user_stylesheet('file:////home/mredd/.conkeror.mozdev.org/styles/dark_tube.css');
-register_user_stylesheet('file:////home/mredd/.conkeror.mozdev.org/styles/dark_minimal_youtube.css');
-register_user_stylesheet('file:////home/mredd/.conkeror.mozdev.org/styles/youtube_mytweaks.css');
-// Hulu
-register_user_stylesheet('file:////home/mredd/.conkeror.mozdev.org/styles/hulu_dark.css');
-register_user_stylesheet('file:////home/mredd/.conkeror.mozdev.org/styles/lr_hulu.css');
-register_user_stylesheet('file:////home/mredd/.conkeror.mozdev.org/styles/lightsout_hulu.css');
-// Gmail
-register_user_stylesheet('file:////home/mredd/.conkeror.mozdev.org/styles/gmail_remove_adds.css');
-register_user_stylesheet('file:////home/mredd/.conkeror.mozdev.org/styles/hide_gmail.css');
-// IMDB
-register_user_stylesheet('file:////home/mredd/.conkeror.mozdev.org/styles/imdb_dark.css');
-// LastFM
-register_user_stylesheet('file:////home/mredd/.conkeror.mozdev.org/styles/paint-it-black-lastfm-v2.css');
-register_user_stylesheet('file:////home/mredd/.conkeror.mozdev.org/styles/lastfm_tranmenu.css');
-register_user_stylesheet('file:////home/mredd/.conkeror.mozdev.org/styles/lastfm_noadds.css');
-// Forums
-register_user_stylesheet('file:////home/mredd/.conkeror.mozdev.org/styles/dark_forum.css');
-// Misc
-register_user_stylesheet('file:////home/mredd/.conkeror.mozdev.org/styles/well_rounded.css');
-register_user_stylesheet('file:////home/mredd/.conkeror.mozdev.org/styles/tabbar_mouse.css');
+
