@@ -1,6 +1,6 @@
 #!/bin/bash
 # ~/.bash_aliases
-# http://pyrrhous.com:8080
+# http://0tue0.com
 # tueGroup
 # Smaller than Life Projects
 # By: MreDD
