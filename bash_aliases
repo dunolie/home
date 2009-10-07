@@ -1,21 +1,14 @@
 #!/bin/bash
 # ~/.bash_aliases
-#
+# http://pyrrhous.com:8080
+# tueGroup
+# Smaller than Life Projects
+# By: MreDD
 ##################
-
-####################################################
-## Add the Following Lines to ~/.bashrc            #
-# Bash Aliases                                     #
-##################                                 #
-#if [ -f ~/.bash_aliases ]; then                   #
-# . ~/.bash_aliases                                #
-#fi                                                #
-####################################################
 
 #######################
 ##   Start Aliases   ##
 #######################
-
 ## Now Edit or Add Aliases to File
 ##################
 # Systeminfo
@@ -25,6 +18,7 @@ alias ssinfo="sh ~/scripts/ssinfo.sh"
 
 # User Defined Aliases
 ##################
+alias resetbash="reset;source ~/.bashrc"
 alias ls="ls --color=auto"
 alias ll="ls --color=auto -l"
 alias lsa="ls --color=auto -A"
@@ -36,8 +30,10 @@ alias na="nano"
 alias web="cd $HOME/dls/ && elinks https://ssl.scroogle.org" 
 alias ~="cd ~"
 alias md="mkdir"
-alias ps="ps ax"
+alias psax="ps ax --forest"
+alias psuax="ps aux --forest"
 alias home="cd ~"
+alias un="tar -zxvf"
 alias mountedinfo="df -hT"
 alias ping="ping -c 10 "
 alias ns="netstat -alnp --protocol=inet | grep -v CLOSE_WAIT | cut -c-6,21-94 | tail +2"
@@ -54,11 +50,20 @@ alias catinfo="cat *.info"
 alias mvnzb="~/scripts/misc/mvnzb.sh"
 alias mplayeralsa="mplayer -ao alsa -vf pp=lb "
 alias comterm="urxvt -name 'com' &"
+alias editterm="urxvt -name 'edit' &"
 alias devterm="urxvt -name 'dev' &"
 alias trannyterm="transset .97 "
+alias less="$PAGER"
+alias vim2html="~/scripts/office/vim2html.sh "
+alias sitedump="~/scripts/net/site-grab.sh "
+alias teamspeak="wine $HOME/.wine/drive_c/Program\ Files/Teamspeak2_RC2/TeamSpeak.exe"
 
 #UZBL
-alias uzblweb="$HOME/.config/uzbl/scripts/uzbl_tabbed.py"
+alias uzblweb="$HOME/.config/uzbl/scripts/uzbl_tabbed.py & "
+
+## Adobe Air Apps
+#alias destroytwitter="adobe-air /opt/DestroyTwitter172B/DestroyTwitter172B.air &"
+#alias seesmic="adobe-air /opt/seesmic-desktop/SeesmicDesktop-0.5.air &"
 
 # Pacman
 # sudo pacman -Syu by typing pacup (sudo must be installed and configured first)
@@ -81,7 +86,7 @@ pacsearch() {
 }
 # Yaourt aliases
 alias yaoS="yaourt -S"
-alias yaoSy="yaourt-Sy"
+alias yaoSy="yaourt -Sy"
 alias yaoR="yaourt -R"
 # colorized pacman output with pacs alias:
 alias pacs="yaosearch"
@@ -98,6 +103,7 @@ yaosearch() {
 #############
 alias scrn1="screen -c ~/.screenrc_1"
 alias scrn2="screen -c ~/.screenrc_2"
+alias bashtc="~/apps/bin/bashtc"
 
 # Slackware Tools
 #############
@@ -120,7 +126,7 @@ alias forcowsay="${R}fortune | ${B}cowsay"
 #alias rightconky="sh ~/scripts/right-conky.sh"
 #alias leftconky="sh ~/scripts/left-conky.sh"
 alias conky-1="sh ~/scripts/conky-scripts/conky-new.sh"
-#alias nzbgrab="hellanzb.py enqueuenewzbin "
+alias nzbgrab="hellanzb.py enqueuenewzbin "
 
 #Alias to Chmod
 #############
@@ -142,20 +148,18 @@ alias scan="scanimage -L"
 alias dvdbkupmain="dvdbackup -F -o /mnt/p2/rip/drip"
 alias dvdbkupall="dvdbackup -M -o /mnt/p2/rip/drip"
 
-# Mocp Alias
-#############
-#alias playit="mocp -l "
-#alias pause="mocp -P "
-
 # Alias to some Applications
 ##################
-alias kdx="~/kdx/KDXClient.lexe & "
+alias kdx="~/apps/kdx/KDXClient.lexe & "
 alias imageshackup="~/scripts/imageshackup.sh"
 alias tronad="~/games/bin/armagetronad"
+#alias idesktool="~/.idesktop/idesktool"
+#alias mediainfohtm="mediainfo --Output=HTML " 
 alias vlcremote="vlc --control lirc "
 alias vlctv="v4l2-ctl -i 1 && vlc --hdtv-fix --aspect-ratio=16:9 --deinterlace-mode=b --disable-screensaver --control lirc /dev/video0"
 alias mplayertv="mplayer -ao alsa -vf pp=lb /dev/video0 "
 alias weechat="/usr/local/bin/weechat-curses"
+alias fbcmd="/usr/local/fbcmd/fbcmd.php"
 
 # Office
 ##################
@@ -193,47 +197,17 @@ alias snapdelay="sh ~/scripts/image/scrotdelay.sh "
 alias dragscrot="sh ~/scripts/image/dragscrot.sh "
 alias infosshot="perl ~/scripts/image/info.pl"
 
-# Alias to SSH
+# Bash Aliases
 ##################
-
-# Telnet
-###############
-
-# Alias to FTP
-###############
-
-
-# Alias to SSHFS
-##################
-alias ssfs-anime="sshfs me@1.1.1.1:/mnt/1/Anime/ $HOME/mnt/Anime -C"
-alias ssfs-hd1="sshfs me@1.1.1.1:/mnt/tb2/ $HOME/mnt/Film/1 -C"
-alias ssfs-hd2="sshfs me@1.1.1.1:/mnt/share/Bluray-HD2/ $HOME/mnt/Film/ -C"
-alias ssfs-hd3="sshfs me@1.1.1.1:/mnt/br2/ $HOME/mnt/Film/3 -C"
-alias ssfs-tv="sshfs me@1.1.1.1:/mnt/2/TV/ $HOME/mnt/TV/ -C"
-alias ssfs-music="sshfs me@1.1.1.1:/mnt/f1/Music/ $HOME/mnt/Music/ -C"
-alias ssfs-books="sshfs me@1.1.1.1:/mnt/f1/Books/ $HOME/mnt/Books/ -C"
-alias ssfs-roms="sshfs me@1.1.1.1:/mnt/share/Roms/ $HOME/mnt/roms -C"
-alias ssfs-sabnzb="sshfs me@1.1.1.1:/mnt/share/sabnzb/ $HOME/mnt/nzb -C"
-
-alias ssfs-uanime="fusermount -u $HOME/mnt/Anime"
-alias ssfs-uhd1="fusermount -u $HOME/mnt/Film1"
-alias ssfs-uhd2="fusermount -u $HOME/mnt/Film2"
-alias ssfs-uhd3="fusermount -u $HOME/mnt/Film3"
-alias ssfs-utv="fusermount -u $HOME/mnt/TV"
-alias ssfs-umusic="fusermount -u $HOME/mnt/Music"
-alias ssfs-ubooks="fusermount -u $HOME/mnt"
-alias ssfs-uroms="fusermount -u $HOME/mnt/roms"
-alias ssfs-usabnzb="fusermount -u $HOME/mnt/nzb"
+if [ -f ~/.bash_aliases_ssh-ftp ]; then
+ . ~/.bash_aliases_ssh-ftp
+fi
 
 # Fifo Nicklist Irssi
 ##################
-alias irsii="aterm -name aterm -title irssi -g 112x65+215+32 &"
-alias userlist="aterm -name aterm -title Ulist -g 17x30+1255+255 &"
-alias nicklist="cat ~/.irssi/nicklistfifo"
-
-# VNC Server
-##################
-alias vncssh="ssh *@* -p * -L*:localhost:*"
+#alias irsii="aterm -name aterm -title irssi -g 112x65+215+32 &"
+#alias userlist="aterm -name aterm -title Ulist -g 17x30+1255+255 &"
+#alias nicklist="cat ~/.irssi/nicklistfifo"
 
 # Wallpapers
 ##################

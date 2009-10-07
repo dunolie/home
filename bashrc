@@ -6,6 +6,35 @@
 # By: MreDD     mredd (at) 0tue0.com
 ##################
 
+# GIT STATUS MAGIC (START)
+GIT_PS1_SHOWDIRTYSTATE=true
+function parse_git_branch {
+ 
+  git rev-parse --git-dir &> /dev/null
+  git_status="$(git status 2> /dev/null)"
+  branch_pattern="^# On branch ([^${IFS}]*)"
+  remote_pattern="# Your branch is (.*) of"
+  diverge_pattern="# Your branch and (.*) have diverged"
+  if [[ ! ${git_status}} =~ "working directory clean" ]]; then
+state="${COLOR_RED}⚡"
+  fi
+  # add an else if or two here if you want to get more specific
+  if [[ ${git_status} =~ ${remote_pattern} ]]; then
+if [[ ${BASH_REMATCH[1]} == "ahead" ]]; then
+remote="${COLOR_YELLOW}↑"
+    else
+remote="${COLOR_YELLOW}↓"
+    fi
+fi
+if [[ ${git_status} =~ ${diverge_pattern} ]]; then
+remote="${COLOR_YELLOW}↕"
+  fi
+if [[ ${git_status} =~ ${branch_pattern} ]]; then
+branch=${BASH_REMATCH[1]}
+    echo -e "${COLOR_LIGHT_GREEN}➔(${branch})${remote}${state}"
+  fi
+}
+
 # color
 #################
 # Color Codes
@@ -175,9 +204,9 @@ shopt -s checkwinsize
 #
 
 #
-EDITOR="vim"
-BROWSER="elinks"
-declare -x EDITOR=vim
+export EDITOR="vim"
+export BROWSER="elinks"
+export PAGER="$HOME/apps/bin/vimpager"
 
 # WELCOME SCREEN
 ####################
