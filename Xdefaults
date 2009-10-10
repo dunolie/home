@@ -26,59 +26,61 @@ c64*foreground:          #006e85
 
 ! Terminal theme --
 ! Main
-!*background:    #1A1A1A
-!*foreground:    #006e85
+!*background: #1A1A1A
+!*foreground: #006e85
 ! Black
-!*color0:        #060101
-!*color8:        #66825d
+!*color0: #060101
+!*color8: #66825d
 ! Red
-!*color1:        #ffa07a
-!*color9:        #e9967a
+!*color1: #ffa07a
+!*color9: #e9967a
 ! Green
-!*color2:        #527b66
-!*color10:       #4c5f46
+!*color2: #527b66
+!*color10: #4c5f46
 ! Yellow
-!*color3:        #ded838
-!*color11:       #efef60
+!*color3: #ded838
+!*color11: #efef60
 ! Blue
-!*color4:        #6da3ae
-!*color12:       #4e80c4
+!*color4:        #5492ef
+*color4:        #485E6C
+!*color12:       #5492ef
+*color12:       #485E6C
 ! Magenta
-!*color5:        #967395
-!*color13:       #826ab1
+!*color5: #967395
+!*color13: #826ab1
 ! Cyan
-!*color6:        #69a2b0
-!*color14:       #2d9bb7
+!*color6: #69a2b0
+!*color14: #2d9bb7
 ! White
-!*color7:        #b3b3b3
-!*color15:       #eeeeef
+!*color7: #b3b3b3
+!*color15: #eeeeef
 ! Main
-*background:    #262626
-*foreground:    #686868
+*background: #262626
+*foreground: #686868
 ! Black
-*color0:        #0a0a0a
-*color8:        #0a0a0a
+*color0: #0a0a0a
+*color8: #0a0a0a
 ! Red
-*color1:        #f92672
-*color9:        #f92672
+*color1: #f92672
+*color9: #f92672
 ! Green
-*color2:        #19ba68
-*color10:       #19ba68
+*color2: #19ba68
+*color10: #19ba68
  Yellow
-*color3:        #f3e675
-*color11:       #f3e675
+*color3: #f3e675
+*color11: #f3e675
 ! Blue
-*color4:        #5492ef
-*color12:       #5492ef
+*color4: #5492ef
+*color12: #5492ef
 ! Magenta
-*color5:        #9e6ffe
-*color13:       #9E6FFE
+*color5: #9e6ffe
+*color13: #9E6FFE
 ! Cyan
-*color6:        #5E7175
-*color14:       #A3BABF
+*color6: #5E7175
+*color14: #A3BABF
 ! White
-*color7:        #b3b3b3
-*color15:       #eeeeef
+*color7: #b3b3b3
+*color15: #eeeeef
 
 ! rxvt-unicode --
 
@@ -88,11 +90,11 @@ URxvt*font:                       xft:Pragmata:pixelsize=13:antialias=true:hinti
 URxvt*boldFont:                   xft:Pragmata:pixelsize=14:antialias=true:bold:hinting=true
 URxvt*italicFont:                 xft:Terminus:size=13:antialias=true:hinting=true
 URxvt*bolditalicFont:             xft:Terminus:size=13:antialias=true:hinting=true
-URxvt.keysym.C-0:              command:\033]710;xft:Pragmata:pixelsize=13:autohint=true\007
-URxvt.keysym.C-minus:          command:\033]710;xft:Terminus:pixelsize=12:autohint=true\007
-URxvt.keysym.C-underscore:     command:\033]710;xft:Pragmata:pixelsize=17,xft:Bitstream Vera Sans Mono:autohint=true\007
-URxvt.keysym.C-equal:          command:\033]710;xft:Terminus:pixelsize=20,xft:Bitstream Vera Sans Mono:autohint=true\007
-URxvt.keysym.C-plus:           command:\033]710;xft:Pragmata:pixelsize=24,xft:Bitstream Vera Sans Mono:autohint=true\007
+URxvt.keysym.C-0:              command:\033]710;xft:Pragmata:pixelsize=13:antialias=true:hinting=true\007
+URxvt.keysym.C-minus:          command:\033]710;xft:Pragmata:pixelsize=12:antialias=true:hinting=true\007
+URxvt.keysym.C-underscore:     command:\033]710;xft:Pragmata:pixelsize=14:antialias=true:hinting=true\007
+URxvt.keysym.C-equal:          command:\033]710;xft:Bitstream Vera Sans Mono:autohint=true\007
+URxvt.keysym.C-plus:           command:\033]710;xft:Pragmata:pixelsize=15:antialias=true:hinting=true\007
 !initial size
 URxvt*geometry:                   126x30
 !internal whitespace
@@ -101,9 +103,9 @@ URxvt*internalBorder:     0
 !fade text n% upon unfocus
 !URxvt*fading:             20
 !darken=(0 to 100) lighten=(-1 to -100)
-URxvt*shading:            5
+URxvt*shading:            -5
 !tint background with this color
-URxvt*tintColor:          #191717
+!URxvt*tintColor:          #191717
 !set to 32-bit for real transparency (compositing required)
 URxvt*depth:             32
 !save n lines of scrollback buffer
@@ -143,7 +145,8 @@ URxvt*utmpInhibit:        true
 !! BEGIN urlLauncher settings !!
 URxvt*perl-lib:           /usr/lib/urxvt/perl/
 URxvt*perl-ext-common: default,matcher
-URxvt*urlLauncher:        urxvt-to-uzbl.sh
+!URxvt*urlLauncher:        urxvt-to-uzbl.sh
+URxvt*urlLauncher:        conkeror
 !URxvt*urlLauncher:        conkeror
 !! END urlLauncher settings !!
 !tabs
@@ -154,7 +157,8 @@ URxvt*tabbar-bg:               234
 URxvt*tab-fg:                  95
 URxvt*tab-bg:                  233
 URxvt*tabbed.secondaryScroll:  true
-URxvt.tabbed.urlLauncher:      urxvt-to-uzbl.sh
+!URxvt.tabbed.urlLauncher:      urxvt-to-uzbl.sh
+URxvt.tabbed.urlLauncher:        conkeror
 !URxvt*urlLauncher:        conkeror
 URxvt*tabbed.matcher.button:   2
 URxvt*tabbed.perl-ext-common: default,matcher
@@ -165,8 +169,8 @@ URxvt*matcher.pattern.2:  \\B(/\\S+?):(\\d+)(?=:|$)
 URxvt*matcher.launcher.2: gvim +$2 $1
 
 !transparent=0000 opaque=ffff
-URxvt*cursorColor:       #006e85
-URxvt*cursorColor2:      #000000
+URxvt*cursorColor:       #485e6c
+URxvt*cursorColor2:      #c0672d
 !URxvt*background:        #191717
 !URxvt*foreground:        #276b47
 !URxvt*colorBD:           #ffffff
