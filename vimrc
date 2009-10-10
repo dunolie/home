@@ -144,8 +144,10 @@ set spellfile=~/.spellfile.add
 let NERDTreeVinSize=25
 
 "nmap <F7> to toggle NERDTree window
-nmap <silent> <F7> :NERDTreeToggle<CR>
-
+nmap <silent> <F10> :NERDTreeToggle<CR>
+" set unset Line Numbers
+nmap <silent> <F6> :set nonumber<CR>
+nmap <silent> <F7> :set number<CR>
 
 " ---------------------------------------------------------------------------
 " some useful mappings
