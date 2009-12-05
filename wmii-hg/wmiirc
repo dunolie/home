@@ -1,83 +1,354 @@
-#!/usr/bin/env ruby
-# Bootloader for wmii configuration.
-#--
-# Copyright 2006 Suraj N. Kurapati
-# See the LICENSE file for details.
-#++
+#!/bin/dash -f
+# Configure wmii
+wmiiscript=wmiirc # For wmii.sh
+. wmii.sh
 
-# create a logger to aid debugging
-require 'logger'
-LOG = Logger.new(__FILE__ + '.log', 5)
+# Configuration Variables
+MODKEY=Mod4
+UP=k
+DOWN=j
+LEFT=h
+RIGHT=l
 
-class << LOG
-  # emulate IO.write
-  alias write <<
+# Bars
+noticetimeout=5
+noticebar=/rbar/!notice
 
-  def flush
-    # ignore
-  end
-end
+# Colors tuples: "<text> <background> <border>"
+WMII_NORMCOLORS='#686868 #0a0a0a #2a2929'
+#WMII_NORMCOLORS='#925e5a #1e1512 #8cb9a2'
+WMII_FOCUSCOLORS='#006e85 #191717 #383737'
+#WMII_FOCUSCOLORS='#b7bec4 #1e1512 #925e5a'
 
-# capture standard output in logger
-$stdout = $stderr = LOG
+WMII_BACKGROUND='feh --bg-center /home/mredd/images/wallpapers/EM_Wall1.png'
+WMII_FONT='-*-clean-*-*-*-*-12-*-*-*-*-*-*-*'
+#WMII_FONT='-misc-pragmata-*-*-*-*-12-*-*-*-*-*-*'
+#WMII_FONT='-*-iconsolata-*-*-*-*-6-*-*-*-*-*-*-*'
 
-begin
-  LOG.info 'birth'
+set -- $(echo $WMII_NORMCOLORS $WMII_FOCUSCOLORS)
+WMII_TERM="urxvt -name 'shell'"
+WMII_UCOM="urxvt -name screen"
+WMII_UEDIT="urxvt -name edit"
+WMII_FBROWSER="thunderbird3"
+WMII_WBROWSER="conkeror"
+WMII_MPLAYER="mplayer -ao alsa -vf pp=lb /dev/video0"
 
-  # load configuration library
-    config_home = File.dirname(__FILE__)
-    config_libs = File.join(config_home, 'config.rb')
-    config_file = File.join(config_home, 'config.yaml')
+# Menu history
+hist="$(wmiir namespace)/history"
+histnum=5000
 
-    require config_libs
+# Column Rules
+wmiir write /colrules <<!
+/gimp/ -> 17+83+41
+/.*/ -> 62+38 # Golden Ratio
+!
 
-  # terminate any existing wmiirc
-    fs.event.write 'Start wmiirc'
+# Tagging Rules
+wmiir write /tagrules <<!
+/Gimp/ -> ~+art
+/VLC|MPlayer/ -> ~
+/KDX.*/ -> ~+kdx
+/screen/ -> +haon
+/Firefox/ -> +do
+!
 
-    event 'Start' do |arg|
-      exit if arg == 'wmiirc'
-    end
+# Status Bar Info
+#WMII_STATUSCOLORS='#aba2a2 #0a0a0a #383737'
+WMII_STATUSCOLORS='#b7bec4 #03111b #44494d'
+#WMII_STATUSCOLORS='#80724e #1e1512 #dbd5ba'
+status() {
+    echo -n $(date +'%R:%S %m/%d/%Y') 
+}
+#Uptime - Update
+#WMII_UPTIMECOLORS='#aba2a2 #0a0a0a #383737'
+WMII_UPTIMECOLORS='#b7bec4 #03111b #44494d'
+#WMII_UPTIMECOLORS='#80724e #1e1512 #dbc585'
+uptimebar() {
+        echo -n $($HOME/.wmii-hg/scripts/uptime.sh) "-" Updates: $(perl $HOME/scripts/conky-scripts/updates/arch-updates/conky-updates.pl)
+}
+#TEMPBar
+#WMII_TEMPCOLORS='#aba2a2 #0a0a0a #383737'
+WMII_TEMPCOLORS='#b7bec4 #03111b #44494d'
+#WMII_STATUSCOLORS='#80724e #1e1512 #dbd5ba'
+tempbar() {
+        echo -n $($HOME/.wmii-hg/scripts/checktemp.sh)
+}
+#NETCOREBar
+#WMII_NETCORECOLORS='#aba2a2 #0a0a0a #383737'
+WMII_NETCORECOLORS='#b7bec4 #03111b #44494d'
+#WMII_UPTIMECOLORS='#80724e #1e1512 #dbc585'
+netcorebar() {
+        echo -n $($HOME/.wmii-hg/scripts/mcorebar.sh)
+}
+#WeatherBar
+#WMII_WEATHERCOLORS='#aba2a2 #0a0a0a #383737'
+WMII_WEATHERCOLORS='#b7bec4 #03111b #44494d'
+#WMII_STATUSCOLORS='#80724e #1e1512 #dbd5ba'
+weatherbar() {
+        echo -n $($HOME/.wmii-hg/scripts/check_weather.sh)
+}
+#MOCBar
+#WMII_MOCCOLORS='#aba2a2 #0a0a0a #383737'
+WMII_MOCCOLORS='#b7bec4 #03111b #44494d'
+#WMII_UPTIMECOLORS='#80724e #1e1512 #dbc585'
+mocbar() {
+        echo -n $($HOME/.wmii-hg/scripts/mocplay.sh) "-" Vol: $($HOME/.wmii-hg/scripts/vol.sh)
+}
 
-  # apply user configuration
-    load_config config_file
+local_events() { true;}
+wi_runconf -s wmiirc_local
 
-  # setup tag bar (buttons that correspond to views)
-    fs.lbar.clear
-    tags.each {|t| event 'CreateTag', t }
-    event 'FocusTag', curr_tag
+echo $WMII_NORMCOLORS | wmiir create $noticebar
 
-  # register key bindings
-    fs.keys.write keys.join("\n")
-    event('Key') {|*a| key(*a) }
+# Event processing
+events() {
+	cat <<'!'
+	# Events
+	Event CreateTag
+		echo "$WMII_NORMCOLORS" "$@" | wmiir create "/lbar/$@"
+	Event DestroyTag
+		wmiir remove "/lbar/$@"
+	Event FocusTag
+		wmiir xwrite "/lbar/$@" "$WMII_FOCUSCOLORS" "$@"
+	Event UnfocusTag
+		wmiir xwrite "/lbar/$@" "$WMII_NORMCOLORS" "$@"
+	Event UrgentTag
+		shift
+		wmiir xwrite "/lbar/$@" "*$@"
+	Event NotUrgentTag
+		shift
+		wmiir xwrite "/lbar/$@" "$@"
+	Event LeftBarClick LeftBarDND
+		shift
+		wmiir xwrite /ctl view "$@"
+	Event Unresponsive
+		{
+			client=$1; shift
+			msg="The following client is not responding. What would you like to do?$wi_nl"
+			resp=$(wihack -transient $client \
+				      xmessage -nearmouse -buttons Kill,Wait -print \
+				               "$msg $(wmiir read /client/sel/label)")
+			if [ "$resp" = Kill ]; then
+				wmiir xwrite /client/$client/ctl slay &
+			fi
+		}&
+	Event Notice
+		wmiir xwrite $noticebar $wi_arg
 
-  # the main event loop
-    fs.event.each_line do |line|
-      line.split("\n").each do |call|
-        name, args = call.split(' ', 2)
+		kill $xpid 2>/dev/null # Let's hope this isn't reused...
+		{ sleep $noticetimeout; wmiir xwrite $noticebar ' '; }&
+		xpid = $!
+	Menu Client-3-Delete
+		wmiir xwrite /client/$1/ctl kill
+	Menu Client-3-Kill
+		wmiir xwrite /client/$1/ctl slay
+	Menu Client-3-Fullscreen
+		wmiir xwrite /client/$1/ctl Fullscreen on
+	Event ClientMouseDown
+		wi_fnmenu Client $2 $1 &
+	Menu LBar-3-Delete
+		tag=$1; clients=$(wmiir read "/tag/$tag/index" | awk '/[^#]/{print $2}')
+		for c in $clients; do
+			if [ "$tag" = "$(wmiir read /client/$c/tags)" ]; then
+				wmiir xwrite /client/$c/ctl kill
+			else
+				wmiir xwrite /client/$c/tags -$tag
+			fi
+			if [ "$tag" = "$(wi_seltag)" ]; then
+				newtag=$(wi_tags | awk -v't='$tag '
+					$1 == t { if(!l) getline l
+						  print l
+						  exit }
+					{ l = $0 }')
+				wmiir xwrite /ctl view $newtag
+			fi
+		done
+	Event LeftBarMouseDown
+		wi_fnmenu LBar "$@" &
+	# Actions
+	Action quit
+		wmiir xwrite /ctl quit
+	Action exec
+		wmiir xwrite /ctl exec "$@"
+	Action rehash
+		proglist $PATH >$progsfile
+	Action status
+		set +xv
+		if wmiir remove /rbar/z_status 2>/dev/null; then
+			sleep 2
+		fi
+		echo $WMII_STATUSCOLORS | wmiir create /rbar/z_status
+		while status | wmiir write /rbar/z_status; do
+			sleep 1
+		done
+	Action uptime
+		set +xv
+		if wmiir remove /rbar/y_uptime 2>/dev/null; then
+			sleep 3
+		fi
+		echo $WMII_UPTIMECOLORS | wmiir create /rbar/y_uptime
+		while uptimebar | wmiir write /rbar/y_uptime; do
+			sleep 2
+		done
+	Action temp
+		set +xv
+		if wmiir remove /rbar/x_temp 2>/dev/null; then
+			sleep 2
+		fi
+		echo $WMII_TEMPCOLORS | wmiir create /rbar/x_temp
+		while tempbar | wmiir write /rbar/x_temp; do
+			sleep 60
+		done
+	Action netcore
+		set +xv
+		if wmiir remove /rbar/w_netcore 2>/dev/null; then
+			sleep 2
+		fi
+		echo $WMII_NETCORECOLORS | wmiir create /rbar/w_netcore
+		while netcorebar | wmiir write /rbar/w_netcore; do
+			sleep 60
+		done
+	Action weather
+		set +xv
+		if wmiir remove /rbar/v_weather 2>/dev/null; then
+			sleep 2
+		fi
+		echo $WMII_WEATHERCOLORS | wmiir create /rbar/v_weather
+		while weatherbar | wmiir write /rbar/v_weather; do
+			sleep 60
+		done
+	Action moc
+		set +xv
+		if wmiir remove /rbar/u_moc 2>/dev/null; then
+			sleep 2
+		fi
+		echo $WMII_MOCCOLORS | wmiir create /rbar/u_moc
+		while mocbar | wmiir write /rbar/u_moc; do
+			sleep 1
+		done
 
-        argv = args.to_s.split(' ')
-        event name, *argv
-      end
-    end
+	# Key Bindings
+	Key $MODKEY-Control-t
+		case $(wmiir read /keys | wc -l | tr -d ' \t\n') in
+		0|1)
+			echo -n "$Keys" | wmiir write /keys
+			wmiir xwrite /ctl grabmod $MODKEY;;
+		*)
+			wmiir xwrite /keys $MODKEY-Control-t
+			wmiir xwrite /ctl grabmod Mod3;;
+		esac
+	Key $MODKEY-space
+		wmiir xwrite /tag/sel/ctl select toggle
+	Key $MODKEY-d
+		wmiir xwrite /tag/sel/ctl colmode sel default-max
+	Key $MODKEY-Shift-s
+		wmiir xwrite /tag/sel/ctl colmode sel +max
+	Key $MODKEY-s
+		wmiir xwrite /tag/sel/ctl colmode sel stack-max
+	Key $MODKEY-m
+		wmiir xwrite /tag/sel/ctl colmode sel stack+max
+	Key $MODKEY-a
+		action $(wi_actions | wimenu -h "${hist}.actions" -n $histnum) &
+	Key $MODKEY-p
+		eval wmiir setsid "$(wimenu -h "${hist}.progs" -n $histnum <$progsfile)" &
+	Key $MODKEY-t
+		wmiir xwrite /ctl view $(wi_tags | wimenu -h "${hist}.tags" -n 50) &
+	Key $MODKEY-Return
+		eval wmiir setsid $WMII_TERM &
+        Key $MODKEY-Mod1-n
+                  eval wmiir setsid $WMII_MPLAYER &
+        Key $MODKEY-n
+		eval wmiir setsid $WMII_WBROWSER &
+        Key $MODKEY-Shift-n
+		eval wmiir setsid $WMII_FBROWSER &
+        Key $MODKEY-b
+		eval wmiir setsid $WMII_UCOM &
+        Key $MODKEY-Shift-b
+		eval wmiir setsid $WMII_UEDIT &
+	Key $MODKEY-Shift-space
+		wmiir xwrite /tag/sel/ctl send sel toggle
+	Key $MODKEY-f
+		wmiir xwrite /client/sel/ctl Fullscreen toggle
+	Key $MODKEY-Shift-c
+		wmiir xwrite /client/sel/ctl kill
+	Key $MODKEY-Shift-t
+		wmiir xwrite "/client/$(wmiir read /client/sel/ctl)/tags" $(wi_tags | wimenu -h "${hist}.tags" -n 50) &
+	Key $MODKEY-$LEFT
+		wmiir xwrite /tag/sel/ctl senlect left
+	Key $MODKEY-$RIGHT
+		wmiir xwrite /tag/sel/ctl select right
+	Key $MODKEY-$DOWN
+		wmiir xwrite /tag/sel/ctl select down
+	Key $MODKEY-$UP
+		wmiir xwrite /tag/sel/ctl select up
+	Key $MODKEY-Control-$DOWN
+		wmiir xwrite /tag/sel/ctl select down stack
+	Key $MODKEY-Control-$UP
+		wmiir xwrite /tag/sel/ctl select up stack
+	Key $MODKEY-Shift-$LEFT
+		wmiir xwrite /tag/sel/ctl send sel left
+	Key $MODKEY-Shift-$RIGHT
+		wmiir xwrite /tag/sel/ctl send sel right
+	Key $MODKEY-Shift-$DOWN
+		wmiir xwrite /tag/sel/ctl send sel down
+	Key $MODKEY-Shift-$UP
+		wmiir xwrite /tag/sel/ctl send sel up
+!
+	for i in 0 1 2 3 4 5 6 7 8 9; do
+		cat <<'!'
+	Key $MODKEY-$i
+		wmiir xwrite /ctl view "$i"
+	Key $MODKEY-Shift-$i
+		wmiir xwrite /client/sel/tags "$i"
+!
+	done
+}
+wi_events <<!
+$(events | sed 's/^	\|^        //')
+$(local_events)
+!
+unset events local_events
 
-rescue SystemExit
-  # ignore it; the program wants to terminate
+# WM Configuration
+wmiir write /ctl <<!
+	font $WMII_FONT
+	focuscolors $WMII_FOCUSCOLORS
+	normcolors $WMII_NORMCOLORS
+	grabmod $MODKEY
+	border 0
+        bar on top
+!
+# set wallpaper
+$WMII_BACKGROUND
 
-rescue Exception => e
-  LOG.error e
+export WMII_FONT WMII_TERM
+export WMII_FOCUSCOLORS WMII_SELCOLORS WMII_NORMCOLORS
 
-  # allow the user to rescue themselves
-  system 'urxvt &'
+# Misc
+#scripts
+progsfile="$(wmiir namespace)/.proglist"
+action status &
+action uptime &
+action temp &
+action netcore &
+action weather &
+action moc &
 
-  IO.popen('xmessage -nearmouse -file - -buttons Recover,Ignore -print', 'w+') do |f|
-    f.puts e.inspect, e.backtrace
-    f.close_write
+wi_proglist $PATH >$progsfile &
 
-    if f.read.chomp == 'Recover'
-      reload_config
-    end
-  end
+# Setup Tag Bar
+IFS="$wi_nl"
+wmiir rm $(wmiir ls /lbar | sed 's,^,/lbar/,') >/dev/null
+seltag=$(wmiir read /tag/sel/ctl | sed 1q)
+unset IFS
+wi_tags | while read tag
+do
+	if [ "$tag" = "$seltag" ]; then
+		echo "$WMII_FOCUSCOLORS" "$tag"
+	else
+		echo "$WMII_NORMCOLORS" "$tag"
+	fi | wmiir create "/lbar/$tag"
+done
 
-ensure
-  LOG.info 'death'
-end
+wi_eventloop
+
