@@ -57,9 +57,10 @@ uptime=$(uptime | sed 's/,.*$//')
 vidcard=$(lspci | grep VGA | awk '{print $5,$7,$8,$9$10}')
 scrnrez=$(xrandr | grep 'current' | cut -c39-50)
 ramall=$(free -m | grep "Mem:" | awk '{print $2}')
-ramuse=$(free -m | grep "Mem:" | awk '{print $3}')${BW}
+ramuse=$(free -m | grep "buffers/cache:" | awk '{print $3}')
 netcard=$(lspci | grep "Ethernet" | awk '{print $4,$6,$7,$2}')
-tvcard=$(lspci | grep "Multimedia" | awk '{print $5,$8,$10$11,$13,$14,$15,$16,$17}')
+tvcarda=$(lspci | grep "Multimedia" | awk '{print $5,$8,$15}' | cut -f 1 -d "/")
+tvcardb=$(lspci | grep "Multimedia" | awk '{print "/"$16,$10,$11"/"$17}')
 soundcard=$(lspci | grep "Audio" | head -1 | awk '{print $4,$6,$9,$10,$11}')
 raidcard=$(lspci | grep "RAID" | awk '{print $5,$7,$8,$9,$10}')
 #tinetin=$(ifconfig $interface | grep "(" | cut -c31-38)
@@ -72,7 +73,7 @@ hd1=$(df -lh / | grep "/" | awk '{print $2"/"$1}' | tail -1)
 hd4=$(df -lh /home | grep "home" | awk '{print $2"/"$1}')
 hd5=$(df -lh /mnt/a | grep "a" | awk '{print $2"/"$1}' | tail -1)
 hd6=$(df -lh /mnt/b | grep "b" | awk '{print $2"/"$1}' | tail -1)
-hd7=$(df -lh /mnt/c | grep "c" | awk '{print $3"/"$2}' | tail -1)
+hd7=$(df -lh /mnt/c | grep "c" | awk '{print $2"/"$3}' | tail -1)
 mocnpa=$(/home/mredd/.wmii-hg/scripts/mocnpartist.sh)
 mocnps=$(/home/mredd/.wmii-hg/scripts/mocnpsong.sh)
 mocnpt=$(/home/mredd/.wmii-hg/scripts/mocnptime.sh)
@@ -92,22 +93,22 @@ mocnpt=$(/home/mredd/.wmii-hg/scripts/mocnptime.sh)
 #echo -e "${W}Hdd${K}: ${BR}$hd1 ${O}- ${BB}$hd4 ${O}- ${BC}$hd5 ${O}- ${BG}$hd6 ${O}- ${BW}$hd7"
 
 echo " "
-echo -e "                   ${C}-| "
+echo -e "                   ${C}-. "
 echo -e "                  ${C}.o+. "
 echo -e "                 ${C}.ooo/ "
 echo -e "                ${C}.+oooo: "
-echo -e "               ${C}.+oooooo: "
-echo -e "               ${C}-+oooooo+:    ${W}OS${K}: ${BW}$distro ${O}| ${TR}Up${K}: ${BW}$uptime "
-echo -e "             ${C}./:-:++oooo+:    ${W}Sys${K}: ${BW}$name${O}/${BW}$hardware ${BW}$cpuinfo ${O}| ${TR}Krnl${K}: ${BW}$release "
+echo -e "               ${C}.+oooooo:    ${W}OS${K}: ${BW}$distro ${O}| ${TR}Up${K}: ${BW}$uptime "
+echo -e "               ${C}-+oooooo+:    ${W}Sys${K}: ${BW}$name${O}/${BW}$hardware ${BW}$cpuinfo "
+echo -e "             ${C}./:-:++oooo+:    ${W}Krnl${K}: ${BW}$release ${O}| ${TR}Ram${K}: ${BW}$ramuse${R}/${BW}$ramall "
 echo -e "            ${C}./++++/+++++++:    ${W}Gfx${K}: ${BW}$vidcard ${O}| ${TR}Res${K}: ${BW}$scrnrez "
-echo -e "           ${C}./++++++++++++++:    ${W}Ram${K}: ${BW}$ramuse${O}/${BW}$ramall ${O}| ${TR}Keyboard${K}: ${BW}Logitech G11 "
-echo -e "          ${C}./+++oooooooo${B}ooooo/.   ${W}Net${K}: ${BW}$netcard ${TR}In${K}: ${BW}$tinetin ${TR}Out${K}: ${BW}$tinetout " 
-echo -e "         ${B}./ooosssso++osssssso+.   ${W}TV${K}: ${BW}$tvcard " 
+echo -e "           ${C}./++++++++++++++:    ${W}Net${K}: ${BW}$netcard "
+echo -e "          ${C}./+++oooooooo${B}ooooo/.         ${TR}In${K}: ${BW}$tinetin ${TR}Out${K}: ${BW}$tinetout " 
+echo -e "         ${B}./ooosssso++osssssso+.   ${W}TV${K}: ${BW}$tvcarda${tvcardb} " 
 echo -e "        ${B}.oossssso-..../ossssss+.   ${W}Sound${K}: ${BW}$soundcard "
 echo -e "       ${B}-osssssso.      :ssssssso.   ${W}Raid${K}: ${BW}$raidcard "
 echo -e "      ${B}:osssssss/        osssso+++.   ${W}Hdd${K}: ${BR}$hd1 ${O}- ${BB}$hd4 ${O}- ${BC}$hd5 ${O}- ${BG}$hd6 ${O}- ${BW}$hd7"  
-echo -e "     ${B}/ossssssss/        +ssssooo/-    ${W}WM${K}: ${BW}WMii${K}-${BW}hg ${O}| ${W}NP${K}:${BW}$mocnpa ${O}-${BW}$mocnps ${O}$mocnpt"  
-echo -e "   ${B}./ossssso+/:-        -:/+osssso+- "
+echo -e "     ${B}/ossssssss/        +ssssooo/-    ${W}Keyboard${K}: ${BW}Logitech ${R}G${O}11 ${TR}Mouse${K}: ${BW}Logitech Performance${R}MX"
+echo -e "   ${B}./ossssso+/:-        -:/+osssso+-   ${W}WM${K}: ${BW}WMii${K}-${BW}hg ${O}| ${TR}NP${K}:${BW}$mocnpa ${O}-${BW}$mocnps ${O}$mocnpt"
 echo -e "  ${B}.+sso+:-.                 ..-/+oso: "
 echo -e " ${B}.++:.                           .-/+/ "
 echo -e " ${B}..                                  .. "
