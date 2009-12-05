@@ -18,13 +18,7 @@ Xft.rgba:       rgb
 Xft.hinting:    full
 Xft.hintstyle:  hintslight
 
-! c64 settings --
-
-c64*font:                xft:Terminus:autohint=false:antialias=false:size=7
-c64*background:          #191717
-c64*foreground:          #006e85
-
-! Terminal theme --
+! Terminal themes --
 ! Main
 !*background: #1A1A1A
 !*foreground: #006e85
@@ -41,10 +35,10 @@ c64*foreground:          #006e85
 !*color3: #ded838
 !*color11: #efef60
 ! Blue
-!*color4:        #5492ef
-*color4:        #485E6C
-!*color12:       #5492ef
-*color12:       #485E6C
+!*color4: #5492ef
+!*color4: #485E6C
+!*color12: #5492ef
+!*color12: #485E6C
 ! Magenta
 !*color5: #967395
 !*color13: #826ab1
@@ -54,19 +48,21 @@ c64*foreground:          #006e85
 ! White
 !*color7: #b3b3b3
 !*color15: #eeeeef
+!#
 ! Main
 *background: #262626
 *foreground: #686868
+*cursorColor: #5492ef
 ! Black
 *color0: #0a0a0a
 *color8: #0a0a0a
 ! Red
 *color1: #f92672
 *color9: #f92672
-! Green
+ Green
 *color2: #19ba68
 *color10: #19ba68
- Yellow
+ !Yellow
 *color3: #f3e675
 *color11: #f3e675
 ! Blue
@@ -81,8 +77,36 @@ c64*foreground:          #006e85
 ! White
 *color7: #b3b3b3
 *color15: #eeeeef
+!#
+!*background: #1e1512
+!*background: #19191a
+!*foreground: #80724e
+!*cursorColor: #80724e
+! Black
+!*color0: #382d22
+!*color8: #4a3f2e
+! Red
+!*color1: #c37b5f
+!*color9: #e19688
+! Green
+!*color2: #9cb955
+!*color10: #c0d584
+!Yellow
+!*color3: #bba85b
+!*color11: #dbc585
+! Blue
+!*color4: #748e9b
+!*color12: #a3bac5
+! Magenta
+!*color5: #925e5a
+!*color13: #ba8092
+! Cyan
+!*color6: #5f9566
+!*color14: #8cb9a2
+! White
+!*color7: #bdbc8f
+!*color15: #dbd5ba
 
-! rxvt-unicode --
 
 URxvt*termName:                   rxvt-256color
 ! font preference
