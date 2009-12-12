@@ -19,9 +19,21 @@ Xft.hinting:    full
 Xft.hintstyle:  hintslight
 
 ! Terminal themes --
-! Main
+! BG
 !*background: #1A1A1A
+!*background: #262626
+!*background: #1e1512
+!*background: #19191a
+*background:   rgb:0e/0e/0e
+!FG
 !*foreground: #006e85
+*foreground:   #a49595
+!*foreground: #686868
+!*foreground: #80724e
+!Cursor
+*cursorColor: #7e0536
+!*cursorColor: #80724e
+! Theme 0
 ! Black
 !*color0: #060101
 !*color8: #66825d
@@ -49,45 +61,39 @@ Xft.hintstyle:  hintslight
 !*color7: #b3b3b3
 !*color15: #eeeeef
 !#
-! Main
-*background: #262626
-*foreground: #686868
-*cursorColor: #5492ef
+! Theme 1
 ! Black
-*color0: #0a0a0a
-*color8: #0a0a0a
+!*color0: #0a0a0a
+!*color8: #0a0a0a
 ! Red
-*color1: #f92672
-*color9: #f92672
- Green
-*color2: #19ba68
-*color10: #19ba68
+!*color1: #f92672
+!*color9: #f92672
+! Green
+!*color2: #19ba68
+!*color10: #19ba68
  !Yellow
-*color3: #f3e675
-*color11: #f3e675
+!*color3: #f3e675
+!*color11: #f3e675
 ! Blue
-*color4: #5492ef
-*color12: #5492ef
+!*color4: #5492ef
+!*color12: #5492ef
 ! Magenta
-*color5: #9e6ffe
-*color13: #9E6FFE
+!*color5: #9e6ffe
+!*color13: #9E6FFE
 ! Cyan
-*color6: #5E7175
-*color14: #A3BABF
+!*color6: #5E7175
+!*color14: #A3BABF
 ! White
-*color7: #b3b3b3
-*color15: #eeeeef
+!*color7: #b3b3b3
+!*color15: #eeeeef
 !#
-!*background: #1e1512
-!*background: #19191a
-!*foreground: #80724e
-!*cursorColor: #80724e
+!Theme 2
 ! Black
 !*color0: #382d22
 !*color8: #4a3f2e
 ! Red
-!*color1: #c37b5f
-!*color9: #e19688
+*color1: #c37b5f
+*color9: #e19688
 ! Green
 !*color2: #9cb955
 !*color10: #c0d584
@@ -106,7 +112,32 @@ Xft.hintstyle:  hintslight
 ! White
 !*color7: #bdbc8f
 !*color15: #dbd5ba
-
+!#
+!Theme3
+! Black
+*color0: #120d0d
+*color8: #0a0404
+! Red
+*color1: #b03232
+*color9: #b50b0b
+! Green
+*color2: #229f8f
+*color10: #057e6e
+!Yellow
+*color3: #968e4d
+*color11: #aea241
+! Blue
+*color4: #8e97c1
+*color12: #5d6485
+! Magenta
+*color5: #936592
+*color13: #9b589a
+! Cyan
+*color6: #73afb0
+*color14: #5edfe1
+! White
+*color7: #bcc1c0
+*color15: #7b807f
 
 URxvt*termName:                   rxvt-256color
 ! font preference
