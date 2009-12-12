@@ -251,23 +251,6 @@ xterm*jumpScroll:         true
 xterm*multiScroll:        true
 xterm*toolBar:            false
 
-!aterm settings --    
-
-aterm*background:		#191717
-aterm*foreground:		#006e85
-aterm*transparent:		true
-aterm*shading:			30
-aterm*cursorColor:		gray
-aterm*saveLines:		2000
-!aterm*tinting:			gray
-aterm*scrollBar:		false
-!aterm*scrollBar_right:	         true
-aterm*transpscrollbar:		true
-aterm*borderwidth:		0
-aterm*font:	-artwiz-snap-*-*-*-*-*-*-*-*-*-*-*-*
-aterm*geometry:			80x25
-!aterm*fading:			70  
-
 ! xpdf --
 
 xpdf*enableFreetype:    yes
