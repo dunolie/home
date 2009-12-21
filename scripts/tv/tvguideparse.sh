@@ -15,7 +15,7 @@ FETCHGUIDE="elinks -dump -dump-width 300 "$TVLISTING""
 #
 $FETCHGUIDE > $HOME/.ivtv/TVGUIDE
 #
-cat $HOME/.ivtv/TVGUIDE | grep $X > $HOME/.ivtv/ONNOW
-cat $HOME/.ivtv/ONNOW | sed 's/\[[^]\]*]//g' | sed -e 's/Logo/ /g' | cut -f1 -d "(" > $HOME/.ivtv/on
-ONTV=$(cat $HOME/.ivtv/on | sed 's/$X/ /g' | awk '{print $2,$3,$4,$5,$6,$7,$8}')
+ONNOW=$(cat $HOME/.ivtv/TVGUIDE | grep $X | awk '{$1=""; $2=""; print $0}' | sed 's/\(\ \)\1//' | cut -f2 -d "[" | cut -f2 -d "]" > $HOME/.ivtv/ONNOW)
+$ONNOW
+ONTV=$(cat $HOME/.ivtv/ONNOW)
 echo -e "On TV: $X - $ONTV" 
