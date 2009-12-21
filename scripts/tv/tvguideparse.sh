@@ -3,7 +3,11 @@
 # Parse and retrieve TV Info from http://tvlistings.aol.com - Time Warner Standard
 #  limited to santa ana - atm.
 #############################
-TVLISTING="http://affiliate.zap2it.com/tvlistings/ZCGrid.do?method=decideFwdForLineup&zipcode=92707&setMyPreference=false&lineupId=CA04977:-"
+# Zipcode
+ZIPCODE="92707"
+# Cable Providor ID
+LINEUPID="CA04977"
+TVLISTING="http://affiliate.zap2it.com/tvlistings/ZCGrid.do?method=decideFwdForLineup&zipcode=${ZIPCODE}&setMyPreference=false&lineupId=${LINEUPID}:-"
 NETWORK=$(sh $HOME/scripts/tv/onnetwork.sh > $HOME/.ivtv/onnetwork)
 X=$(cat $HOME/.ivtv/onnetwork)
 # elinks:        http://elinks.or.cz/
