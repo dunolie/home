@@ -4,9 +4,9 @@
 #  limited to santa ana - atm.
 #############################
 # Zipcode
-ZIPCODE="92707"
+ZIPCODE=""
 # Cable Providor ID
-LINEUPID="CA04977"
+LINEUPID=""
 TVLISTING="http://affiliate.zap2it.com/tvlistings/ZCGrid.do?method=decideFwdForLineup&zipcode=${ZIPCODE}&setMyPreference=false&lineupId=${LINEUPID}:-"
 NETWORK=$(sh $HOME/scripts/tv/onnetwork.sh > $HOME/.ivtv/onnetwork)
 X=$(cat $HOME/.ivtv/onnetwork)
