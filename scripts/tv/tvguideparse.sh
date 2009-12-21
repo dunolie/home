@@ -4,9 +4,9 @@
 #  limited to santa ana - atm.
 #############################
 # Zipcode
-ZIPCODE=""
+ZIPCODE="92707"
 # Cable Providor ID
-LINEUPID=""
+LINEUPID="CA04977"
 TVLISTING="http://affiliate.zap2it.com/tvlistings/ZCGrid.do?method=decideFwdForLineup&zipcode=${ZIPCODE}&setMyPreference=false&lineupId=${LINEUPID}:-"
 NETWORK=$(sh $HOME/scripts/tv/onnetwork.sh > $HOME/.ivtv/onnetwork)
 X=$(cat $HOME/.ivtv/onnetwork)
@@ -22,4 +22,4 @@ $FETCHGUIDE > $HOME/.ivtv/TVGUIDE
 ONNOW=$(cat $HOME/.ivtv/TVGUIDE | grep $X | awk '{$1=""; $2=""; print $0}' | sed 's/\(\ \)\1//' | cut -f2 -d "[" | cut -f2 -d "]" > $HOME/.ivtv/ONNOW)
 $ONNOW
 ONTV=$(cat $HOME/.ivtv/ONNOW)
-echo -e "On TV: $X - $ONTV" 
+echo -e "MPlayerTV: $X - $ONTV"

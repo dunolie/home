@@ -45,9 +45,9 @@ FL='\x06' # Flashing
 RT='\x03\x02\x02' # Reset Text
 # Variables
 # Zipcode
-ZIPCODE=""
+ZIPCODE="92707"
 # Cable Providor ID
-LINEUPID=""
+LINEUPID="CA04977"
 TVLISTING="http://affiliate.zap2it.com/tvlistings/ZCGrid.do?method=decideFwdForLineup&zipcode=${ZIPCODE}&setMyPreference=false&lineupId=${LINEUPID}:-"
 NETWORK=$(sh $HOME/scripts/tv/onnetwork.sh > $HOME/.ivtv/onnetwork)
 X=$(cat $HOME/.ivtv/onnetwork)
