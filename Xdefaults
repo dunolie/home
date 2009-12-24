@@ -115,36 +115,62 @@ Xft.hintstyle:  hintslight
 !#
 !Theme3
 ! Black
-*color0: #120d0d
-*color8: #0a0404
+!*color0: #120d0d
+!*color8: #0a0404
 ! Red
-*color1: #b03232
-*color9: #b50b0b
+!*color1: #b03232
+!*color9: #b50b0b
 ! Green
-*color2: #229f8f
-*color10: #057e6e
+!*color2: #229f8f
+!*color10: #057e6e
 !Yellow
-*color3: #968e4d
-*color11: #aea241
+!*color3: #968e4d
+!*color11: #aea241
 ! Blue
-*color4: #8e97c1
-*color12: #5d6485
+!*color4: #8e97c1
+!*color12: #5d6485
 ! Magenta
-*color5: #936592
-*color13: #9b589a
+!*color5: #936592
+!*color13: #9b589a
 ! Cyan
-*color6: #73afb0
-*color14: #5edfe1
+!*color6: #73afb0
+!*color14: #5edfe1
 ! White
-*color7: #bcc1c0
-*color15: #7b807f
+!*color7: #bcc1c0
+!*color15: #7b807f
+
+! jwr dark
+!black
+*color0:  #333333
+*color8:  #454545
+!red
+*color1:  #8C4665
+*color9:  #BF4D80
+!green
+*color2:  #287373
+*color10: #53A6A6
+!yellow
+*color3:  #7C9AA6
+*color11: #8FBCBF
+!blue
+*color4:  #395573
+*color12: #477AB3
+!magenta
+*color5:  #5E468C
+*color13: #7E62B3
+!cyan
+*color6:  #31658C
+*color14: #6096BF
+!white
+*color7:  #808080
+*color15: #B0B0B0
 
 URxvt*termName:                   rxvt-256color
 ! font preference
 URxvt*font:                       xft:Pragmata:pixelsize=13:antialias=true:hinting=true
 URxvt*boldFont:                   xft:Pragmata:pixelsize=14:antialias=true:bold:hinting=true
-URxvt*italicFont:                 xft:Terminus:size=13:antialias=true:hinting=true
-URxvt*bolditalicFont:             xft:Terminus:size=13:antialias=true:hinting=true
+URxvt*italicFont:                 xft:Inconsolata:size=13:antialias=true:hinting=true
+URxvt*bolditalicFont:             xft:Inconsolata:size=13:antialias=true:hinting=true
 URxvt.keysym.C-0:              command:\033]710;xft:Pragmata:pixelsize=13:antialias=true:hinting=true\007
 URxvt.keysym.C-minus:          command:\033]710;xft:Pragmata:pixelsize=12:antialias=true:hinting=true\007
 URxvt.keysym.C-underscore:     command:\033]710;xft:Pragmata:pixelsize=14:antialias=true:hinting=true\007
@@ -236,7 +262,7 @@ URxvt*cursorColor2:      #c0672d
 ! xterm --
 
 xterm*geometry:           80x25
-xterm*faceName:           Terminus:size=12:antialias=true:hinting=true
+xterm*faceName:           Inconsolata:size=12:antialias=true:hinting=true
 !xterm*font:             -*-dina-medium-r-*-*-16-*-*-*-*-*-*-*
 xterm*dynamicColors:      true
 xterm*utf8:               2
