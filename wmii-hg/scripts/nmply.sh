@@ -49,12 +49,17 @@ BGC='\E[46m'   # Cyan
 BGW='\E[47m'   # White
 BGO='\E[33m'   # Orange
 TR='\E[0m'    # Text Reset
-NPM=$(ps ax | grep mplayer | cut -c35-80 | head -1 | sed 's/\(.*\)\..*/\1/')
+# Variables
+NPMA=$(ps ax | grep "mplayer -ao" | awk '{$1="";$2=""; print $0}' | head -1 | awk '{print $3,$4,$5,$6}')
+NPMB=$(ps ax | grep "mplayer -ao" | awk '{$1="";$2=""; print $0}' | head -1 | awk '{print $6}' | sed 's/\(.*\)\..*/\1/')
+NPMC=$(ps ax | grep "mplayer -ao" | awk '{$1="";$2=""; print $0}' | head -1 | awk '{print $3,$4,$5}')
 #
-if [ "$NPM" == "" ];then echo -e "${W}On MPlayer${K}: ${BW}Player Empty.. ${R}[${BW}Nothing Playing${R}]"
+if [ "$NPMC" == "mplayer" ];then echo -e "${W}On MPlayer${K}: ${G}Player Empty.. ${R}[${B}Nothing Playing${R}]"
+
 else
-if [ "$NPM" == "/dev/video0" ];then echo -e "${W}On MPlayer${K}: ${BW}Watching TV aka.. ${R}[${BW}IdiotBox${R}]"
+    if [ "$NPMC" == "mplayer -ao null" ];then echo -e "${R}[${W}MUTED${R}] ${W}Watching${K}: ${G}$NPMB"
 else
-echo -e "${W}On MPlayer${K}: ${BW}$NPM "
+    if [ "$NPMC" == "mplayer -ao alsa" ];then echo -e "${W}Watching${B}: ${G}$NPMB"
+    fi
 fi
 fi
