@@ -1,6 +1,6 @@
 #!/bin/sh
 # Now Playing On Mplayer
-# http://script.m-redd.com
+# http://m-redd.com
 # Smaller than Life Projects
 # By: MreDD
 # projects - at - 0tue0 (dot) com
