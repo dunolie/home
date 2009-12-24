@@ -5,10 +5,7 @@
 # By: MreDD
 # projects - at - 0tue0 (dot) com
 ## 
-# [READ NEXT TWO LINES]
-##
-# alias in bashrc
-# alias mplayer='mplayer -ao alsa -vf pp=lb'
+#
 #############################################
 # Colors
 # regular colors
